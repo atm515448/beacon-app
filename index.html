@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b6b3a">
+<title>Beacon - Learn, Stay Healthy, Grow Wealth</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--g:#0b6b3a;--gt:#0b6b3a;--g2:#e6f4ec;--gold:#c8962b;--bg:#f3f6f4;--tx:#15211b;--card:#fff;--mut:#5b6a62;--bd:#d6dfda;--ok:#1e8e4e;--no:#c0392b;--nav:#fff;
+--info:#e8f1fb;--infob:#8db5e6;--do:#e6f4ec;--dob:#6fbf8d;--dont:#fff4d6;--dontb:#e5b93c;--dang:#fdecea;--dangb:#e57368}
+@media(prefers-color-scheme:dark){:root{--gt:#5fd394;--g2:#1d3226;--bg:#0f1714;--tx:#e8f0ec;--card:#18231e;--mut:#9db0a7;--bd:#2b3a33;--nav:#141e1a;
+--info:#17283a;--infob:#35608f;--do:#1b3326;--dob:#2f7a4c;--dont:#3a3217;--dontb:#8a6d1c;--dang:#3b1f1c;--dangb:#8e3b33}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:16px}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;padding-bottom:76px}
+body.noav{padding-bottom:16px}
+header{position:sticky;top:0;z-index:5;background:var(--g);color:#fff;display:flex;align-items:center;gap:8px;padding:10px 14px}
+header h1{font-size:1.1rem;margin:0;flex:1;font-weight:700}
+header button{background:rgba(255,255,255,.18);border:0;color:#fff;border-radius:10px;font-size:1.1rem;padding:6px 12px;cursor:pointer}
+.xp{font-size:.85rem;background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;white-space:nowrap}
+main{max-width:640px;margin:0 auto;padding:14px 14px 8px}
+h2{font-size:1.15rem;margin:18px 0 8px}
+h3{font-size:1rem;margin:0 0 6px}
+.sub{color:var(--mut);font-size:.9rem;margin:0 0 10px}
+.en{display:block;color:var(--mut);font-size:.85em;font-style:italic;margin-top:2px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}
+.btn{display:block;width:100%;background:var(--g);color:#fff;border:0;border-radius:12px;padding:13px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:10px;text-align:center}
+.btn.sm{display:inline-block;width:auto;padding:8px 14px;font-size:.9rem;margin-top:0}
+.btn2{display:block;width:100%;background:transparent;color:var(--gt);border:1px solid var(--gt);border-radius:12px;padding:11px;font-size:1rem;cursor:pointer;margin-top:8px}
+.btn.del,.del{background:transparent;color:var(--no);border:0;cursor:pointer;font-size:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.chip{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:7px 13px;font-size:.92rem;cursor:pointer}
+.chip.on{background:var(--g);border-color:var(--g);color:#fff}
+.lbl{font-weight:600;margin:12px 0 4px;font-size:.9rem}
+input,select{width:100%;padding:11px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font-size:1rem}
+.row{display:flex;gap:8px}.row>*{flex:1}
+.hero{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#0b6b3a,#13915a);color:#fff;border-radius:16px;padding:16px;margin-bottom:12px}
+.hero h2{margin:0;font-size:1.25rem}.hero p{margin:2px 0 0;opacity:.9;font-size:.9rem}
+.streak{text-align:center;font-size:1.5rem;font-weight:800;background:rgba(255,255,255,.18);border-radius:12px;padding:6px 12px}
+.streak small{display:block;font-size:.7rem;font-weight:400}
+.daily{width:100%;text-align:left;border:0;border-radius:14px;padding:14px;margin-bottom:12px;background:linear-gradient(135deg,#c8962b,#e0b04d);color:#2b1f00;cursor:pointer;display:block}
+.daily.done{background:var(--g2);color:var(--tx);border:1px solid var(--bd)}
+.daily b{font-size:1.05rem}.daily small{display:block;opacity:.85}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.tile{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px 10px;text-align:left;color:var(--tx);cursor:pointer;display:flex;flex-direction:column;gap:2px}
+.tile .ti{font-size:1.7rem}.tile b{font-size:.98rem}.tile small{color:var(--mut);font-size:.8rem}
+nav{position:fixed;bottom:0;left:0;right:0;background:var(--nav);border-top:1px solid var(--bd);display:flex;z-index:6;padding-bottom:env(safe-area-inset-bottom)}
+body.noav nav{display:none}
+nav button{flex:1;background:none;border:0;color:var(--mut);padding:8px 2px 6px;font-size:.72rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}
+nav button span{font-size:1.35rem}
+nav button.on{color:var(--gt);font-weight:700}
+.top{display:flex;justify-content:space-between;font-size:.9rem;color:var(--mut);margin-bottom:6px}
+.tm{font-weight:700;color:var(--no)}
+.bar{height:8px;background:var(--bd);border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--g);border-radius:8px}
+.bar.gold i{background:var(--gold)}
+.qn{font-size:.82rem;color:var(--mut)}
+.q{font-size:1.1rem;font-weight:600;margin:6px 0 10px}
+.say{background:var(--g2);color:var(--gt);border:0;border-radius:8px;padding:6px 10px;font-size:.85rem;cursor:pointer;margin-bottom:8px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;font-size:1rem;cursor:pointer}
+.opt.sel{border-color:var(--g);background:var(--g2)}
+.opt.ok{background:#d9f2e3;border-color:var(--ok);color:#0d3b20}
+.opt.no{background:#f9dcd8;border-color:var(--no);color:#5a1a13}
+.fb{margin-top:10px;padding:12px;border-radius:10px;font-size:.95rem}
+.fb.g{background:var(--g2)}.fb.r{background:var(--dang)}
+.fb p{margin:6px 0 0}
+.pal{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.pal button{width:34px;height:34px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;font-size:.85rem}
+.pal button.a{background:var(--g2);border-color:var(--g)}
+.pal button.c{outline:2px solid var(--gold)}
+.score{text-align:center;font-size:2.8rem;font-weight:800;color:var(--gt);margin:4px 0}
+.center{text-align:center}
+.sec{border-radius:12px;padding:12px;margin-bottom:10px;border:1px solid}
+.sec.info{background:var(--info);border-color:var(--infob)}
+.sec.do{background:var(--do);border-color:var(--dob)}
+.sec.dont{background:var(--dont);border-color:var(--dontb)}
+.sec.danger{background:var(--dang);border-color:var(--dangb)}
+.sec ul{margin:0;padding-left:20px}.sec li{margin:6px 0}
+.disc{font-size:.8rem;color:var(--mut);margin-top:12px}
+.li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.li:last-child{border:0}.li .g{flex:1}
+.li small{color:var(--mut);display:block}
+.pos{color:var(--ok);font-weight:700}.neg{color:var(--no);font-weight:700}
+.big{font-size:1.5rem;font-weight:800}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.bdg{background:var(--g2);border-radius:12px;padding:8px 10px;font-size:.8rem;text-align:center;min-width:92px}
+.bdg.off{opacity:.35;filter:grayscale(1)}
+.bdg span{display:block;font-size:1.5rem}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+td,th{padding:7px 6px;border-bottom:1px solid var(--bd);text-align:left}
+tr.me td{background:var(--g2);font-weight:700}
+details{border-top:1px solid var(--bd);padding:8px 0}
+summary{cursor:pointer;font-weight:600}
+.pill{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:999px;background:var(--g2);color:var(--gt);margin-left:6px}
+.pill.od{background:var(--dang);color:var(--no)}.pill.sn{background:var(--dont);color:#8a6d1c}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#222;color:#fff;padding:10px 16px;border-radius:12px;font-size:.9rem;z-index:20;max-width:90%;text-align:center}
+.foot{text-align:center;color:var(--mut);font-size:.75rem;margin:18px 0 6px}
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* ================= SUBJECTS ================= */
+const SUBJ={
+eng:{n:`English`,ic:`📖`},
+mat:{n:`Mathematics`,ic:`➗`},
+bio:{n:`Biology`,ic:`🧬`},
+che:{n:`Chemistry`,ic:`⚗️`},
+phy:{n:`Physics`,ic:`⚡`},
+gov:{n:`Government`,ic:`🏛️`},
+eco:{n:`Economics`,ic:`📈`},
+isl:{n:`Islamic Studies`,ic:`🕌`},
+com:{n:`Computer Studies`,ic:`💻`}
+};
+
+/* ================= QUESTIONS =================
+ [subject, question, [4 options], correctIndex(0-3), Hausa explanation, English explanation]
+ ADD NEW QUESTIONS AT THE END OF THE LIST ONLY (progress is saved by position).
+*/
+const RAW=[
+/* ---------- ENGLISH ---------- */
+[`eng`,`Choose the word opposite in meaning to "generous".`,[`Kind`,`Stingy`,`Rich`,`Polite`],1,`Generous yana nufin mai karimci. Akasin sa shi ne stingy (mai rowa).`,`Generous means giving freely. Its opposite is stingy.`],
+[`eng`,`She ____ to school every day.`,[`go`,`goes`,`going`,`gone`],1,`Idan mutum ɗaya ne (she, he, it) a present tense, kalmar aiki tana ɗaukar "s": she goes.`,`With she/he/it in the simple present, the verb takes -s: she goes.`],
+[`eng`,`Choose the word closest in meaning to "rapid".`,[`Slow`,`Fast`,`Weak`,`Late`],1,`Rapid yana nufin da sauri, wato fast.`,`Rapid means very quick, so fast is the synonym.`],
+[`eng`,`What is the plural of "child"?`,[`Childs`,`Childrens`,`Children`,`Childes`],2,`Jam'in child ba ya bin ka'idar "s". Jam'insa shi ne children.`,`Child has an irregular plural: children.`],
+[`eng`,`Choose the correct spelling.`,[`Neccessary`,`Necessary`,`Necesary`,`Neccesary`],1,`Necessary: c ɗaya, s biyu (one collar, two sleeves).`,`Necessary has one C and two S (one collar, two sleeves).`],
+[`eng`,`The boys ____ playing football when the rain started.`,[`was`,`were`,`is`,`are`],1,`The boys jam'i ne, kuma abin ya faru a baya (past continuous), don haka: were playing.`,`"The boys" is plural and the action is in the past, so use were.`],
+[`eng`,`What is the past tense of "buy"?`,[`Buyed`,`Boughten`,`Bought`,`Buys`],2,`Buy kalma ce mara ka'ida. Past tense ɗinta shi ne bought.`,`Buy is irregular: buy, bought, bought.`],
+[`eng`,`Choose the word opposite in meaning to "ancient".`,[`Old`,`Modern`,`Historic`,`Past`],1,`Ancient yana nufin na da sosai. Akasin sa shi ne modern (na zamani).`,`Ancient means very old. Its opposite is modern.`],
+[`eng`,`I have lived in Kano ____ 2015.`,[`for`,`since`,`from`,`at`],1,`Since ana amfani da shi da takamaiman lokaci (2015). For kuwa da tsawon lokaci (for five years).`,`Use since with a point in time (2015) and for with a length of time.`],
+[`eng`,`Which of these words is a noun?`,[`Quickly`,`Happiness`,`Beautiful`,`Run`],1,`Noun suna ne. Happiness (farin ciki) suna ne. Quickly adverb ne, beautiful adjective ne, run kuma verb ne.`,`Happiness names a feeling, so it is a noun.`],
+[`eng`,`Musa is the ____ of the two brothers.`,[`tall`,`tallest`,`taller`,`more tall`],2,`Idan ana kwatanta mutum biyu, ana amfani da comparative: taller. Tallest don uku ko fiye.`,`Comparing two people uses the comparative: taller.`],
+[`eng`,`The idiom "to kick the bucket" means ____.`,[`to die`,`to fight`,`to travel`,`to sleep`],0,`"Kick the bucket" karin magana ne da ke nufin mutuwa.`,`It is an idiom meaning to die.`],
+[`eng`,`Neither of the boys ____ present.`,[`were`,`was`,`are`,`have`],1,`"Neither of" yana ɗaukar kalmar aiki ta mufuradi: Neither of the boys was present.`,`"Neither of + plural noun" takes a singular verb: was.`],
+[`eng`,`The synonym of "diligent" is ____.`,[`lazy`,`hardworking`,`careless`,`proud`],1,`Diligent yana nufin mai ƙwazo da jajircewa, wato hardworking.`,`Diligent means hardworking and careful.`],
+[`eng`,`"The wind whispered through the trees." This is an example of ____.`,[`simile`,`metaphor`,`personification`,`hyperbole`],2,`Iska ba ta iya raɗa kamar mutum. Lokacin da aka ba abu halin mutum, ana kiransa personification.`,`Giving a human action (whispering) to the wind is personification.`],
+[`eng`,`He is very good ____ mathematics.`,[`in`,`at`,`on`,`with`],1,`Ana cewa "good at" wani darasi ko fasaha.`,`The correct collocation is "good at".`],
+
+/* ---------- MATHS ---------- */
+[`mat`,`3/4 + 1/4 = ?`,[`1`,`1/2`,`4/8`,`2`],0,`Denominator iri ɗaya ne, sai a haɗa numerators: 3+1 = 4, 4/4 = 1.`,`Same denominator: 3+1 = 4, so 4/4 = 1.`],
+[`mat`,`Solve for x: 2x + 6 = 14`,[`x = 3`,`x = 4`,`x = 5`,`x = 10`],1,`2x = 14 - 6 = 8. Sai a raba: x = 8 / 2 = 4.`,`2x = 14 - 6 = 8, so x = 4.`],
+[`mat`,`What is 25% of 200?`,[`25`,`40`,`50`,`100`],2,`25% = 25/100. Sai a ninka: 25/100 x 200 = 50.`,`25/100 x 200 = 50.`],
+[`mat`,`Find the area of a rectangle 8 cm long and 5 cm wide.`,[`13 cm²`,`26 cm²`,`40 cm²`,`80 cm²`],2,`Area = tsayi x faɗi = 8 x 5 = 40 cm².`,`Area = length x width = 8 x 5 = 40 cm².`],
+[`mat`,`What is the square root of 144?`,[`10`,`11`,`12`,`14`],2,`12 x 12 = 144, don haka tushen 144 shi ne 12.`,`12 x 12 = 144.`],
+[`mat`,`Simplify 2³ x 2²`,[`32`,`64`,`16`,`10`],0,`Idan base iri ɗaya ne, a haɗa powers: 2³ x 2² = 2⁵ = 32.`,`Same base: add the powers. 2^(3+2) = 2^5 = 32.`],
+[`mat`,`Find the perimeter of a square of side 7 cm.`,[`14 cm`,`21 cm`,`28 cm`,`49 cm`],2,`Square yana da gefe 4 daidai. Perimeter = 4 x 7 = 28 cm.`,`Perimeter = 4 x side = 28 cm.`],
+[`mat`,`Find the average of 4, 6, 8, 10 and 12.`,[`6`,`8`,`10`,`40`],1,`A haɗa duka: 4+6+8+10+12 = 40. Sai a raba da adadinsu (5): 40 / 5 = 8.`,`Sum = 40, divided by 5 numbers = 8.`],
+[`mat`,`If a = 3 and b = 2, find a² + b².`,[`10`,`12`,`13`,`25`],2,`a² = 9, b² = 4. Sai a haɗa: 9 + 4 = 13.`,`3² + 2² = 9 + 4 = 13.`],
+[`mat`,`Express 0.75 as a fraction in its simplest form.`,[`1/4`,`1/2`,`3/4`,`7/5`],2,`0.75 = 75/100. A raba sama da ƙasa da 25: 3/4.`,`75/100 simplified by 25 gives 3/4.`],
+[`mat`,`The sum of the angles in a triangle is ____.`,[`90°`,`180°`,`270°`,`360°`],1,`Kusurwoyin triangle idan aka haɗa su suna zama 180°.`,`Angles in a triangle always add up to 180°.`],
+[`mat`,`Solve x² = 49.`,[`x = 7 only`,`x = -7 only`,`x = 7 or x = -7`,`x = 24.5`],2,`Duka 7 x 7 da (-7) x (-7) suna ba da 49, don haka x = 7 ko x = -7.`,`Both 7 and -7 squared give 49.`],
+[`mat`,`Find the simple interest on ₦1,000 at 10% per annum for 2 years.`,[`₦100`,`₦200`,`₦120`,`₦1,200`],1,`SI = (P x R x T) / 100 = (1000 x 10 x 2) / 100 = ₦200.`,`SI = PRT/100 = (1000 x 10 x 2)/100 = ₦200.`],
+[`mat`,`Factorise x² - 9.`,[`(x - 3)(x - 3)`,`(x + 3)(x + 3)`,`(x + 3)(x - 3)`,`(x - 9)(x + 1)`],2,`Wannan difference of two squares ne: a² - b² = (a + b)(a - b). Don haka x² - 9 = (x+3)(x-3).`,`Difference of two squares: a² - b² = (a+b)(a-b).`],
+[`mat`,`Find the LCM of 4 and 6.`,[`2`,`12`,`24`,`10`],1,`Jerin 4: 4, 8, 12... Jerin 6: 6, 12... Mafi ƙanƙanta da suka haɗu shi ne 12.`,`Multiples of 4: 4, 8, 12; of 6: 6, 12. The smallest common one is 12.`],
+[`mat`,`Evaluate 2⁻².`,[`1/4`,`-4`,`4`,`-1/4`],0,`Negative power yana juya lamba: 2⁻² = 1/2² = 1/4.`,`A negative index means reciprocal: 2^-2 = 1/2² = 1/4.`],
+
+/* ---------- BIOLOGY ---------- */
+[`bio`,`Which part of the cell is called the "powerhouse" of the cell?`,[`Nucleus`,`Mitochondria`,`Ribosome`,`Cell wall`],1,`Mitochondria suna samar da kuzari ga tantani, shi ya sa ake kiransu "gidan wutar lantarki".`,`Mitochondria release energy through respiration.`],
+[`bio`,`The process by which green plants make their food is called ____.`,[`Respiration`,`Digestion`,`Photosynthesis`,`Excretion`],2,`Tsirrai suna yin abincinsu da hasken rana, ruwa da carbon dioxide. Wannan ake kira photosynthesis.`,`Plants use light, water and carbon dioxide to make food.`],
+[`bio`,`Which blood group is the universal donor?`,[`A`,`B`,`AB`,`O`],3,`Jinin rukunin O zai iya ba kowane rukuni, shi ya sa ake kiransa universal donor.`,`Group O (negative) can donate to all other groups.`],
+[`bio`,`Which organ is mainly used for gaseous exchange in humans?`,[`Heart`,`Lungs`,`Liver`,`Kidney`],1,`Huhu (lungs) ne ke musayar iskar oxygen da carbon dioxide.`,`The lungs exchange oxygen and carbon dioxide.`],
+[`bio`,`Malaria is transmitted by the ____.`,[`male Culex mosquito`,`female Anopheles mosquito`,`housefly`,`tsetse fly`],1,`Sauron Anopheles mace ne ke yada zazzabin cizon sauro.`,`Only the female Anopheles mosquito carries the malaria parasite.`],
+[`bio`,`The basic unit of heredity is the ____.`,[`Cell`,`Tissue`,`Gene`,`Organ`],2,`Gene ita ce ƙwayar gado. Tana ɗauke da bayanan da ake gadowa daga iyaye.`,`Genes carry information passed from parents to offspring.`],
+[`bio`,`Lack of vitamin C causes ____.`,[`Rickets`,`Scurvy`,`Night blindness`,`Beriberi`],1,`Rashin Vitamin C yana kawo scurvy. Ana samun Vitamin C a lemu, gwanda da kayan lambu.`,`Scurvy comes from vitamin C deficiency (found in citrus fruits).`],
+[`bio`,`The green pigment in leaves that absorbs sunlight is ____.`,[`Haemoglobin`,`Chlorophyll`,`Melanin`,`Carotene`],1,`Chlorophyll ita ce koriyar da ke cikin ganye. Tana ɗaukar hasken rana don photosynthesis.`,`Chlorophyll traps light energy for photosynthesis.`],
+[`bio`,`Kwashiorkor is caused by lack of ____ in the diet.`,[`Protein`,`Vitamin A`,`Iron`,`Carbohydrate`],0,`Kwashiorkor yana faruwa saboda rashin isasshen protein (sunadari), kamar nama, wake da ƙwai.`,`Kwashiorkor is a protein deficiency disease.`],
+[`bio`,`Which part of a flower produces pollen grains?`,[`Stigma`,`Ovary`,`Anther`,`Petal`],2,`Anther yana samar da pollen (ƙurar fure). Yana cikin stamen.`,`The anther, part of the stamen, makes pollen.`],
+[`bio`,`The loss of water vapour from the leaves of a plant is called ____.`,[`Transpiration`,`Germination`,`Osmosis`,`Digestion`],0,`Transpiration shi ne asarar ruwa daga ganyen shuka ta ƙananan ramuka da ake kira stomata.`,`Water vapour escapes through stomata: transpiration.`],
+[`bio`,`What is the basic unit of life?`,[`Organ`,`Cell`,`Tissue`,`Atom`],1,`Cell (tantani) ita ce mafi ƙanƙantar sashin rayuwa.`,`All living things are made of cells.`],
+[`bio`,`Which of these animals is a vertebrate?`,[`Earthworm`,`Grasshopper`,`Frog`,`Snail`],2,`Vertebrate dabba ce mai ƙashin baya. Frog (kwaɗo) yana da ƙashin baya.`,`Vertebrates have a backbone. A frog is an amphibian vertebrate.`],
+[`bio`,`Which organ filters the blood and produces urine?`,[`Liver`,`Kidney`,`Stomach`,`Spleen`],1,`Koda (kidney) tana tace jini kuma tana yin fitsari.`,`The kidneys filter waste from blood to form urine.`],
+
+/* ---------- CHEMISTRY ---------- */
+[`che`,`The chemical symbol for sodium is ____.`,[`S`,`So`,`Na`,`K`],2,`Sodium alamarsa Na (daga Latin: natrium). K ita ce potassium, S kuma sulphur.`,`Sodium = Na. K is potassium and S is sulphur.`],
+[`che`,`The atomic number of an element is the number of ____ in its nucleus.`,[`neutrons`,`protons`,`electrons only`,`protons and neutrons`],1,`Atomic number shi ne adadin protons a cikin atom.`,`Atomic number = number of protons.`],
+[`che`,`The pH value of a neutral solution such as pure water is ____.`,[`0`,`7`,`10`,`14`],1,`pH 7 tsaka-tsaki ne. Ƙasa da 7 acid ne, sama da 7 base/alkali ne.`,`pH 7 is neutral; below 7 is acidic and above 7 is basic.`],
+[`che`,`Which gas turns lime water milky?`,[`Oxygen`,`Hydrogen`,`Carbon dioxide`,`Nitrogen`],2,`Carbon dioxide yana mayar da lime water fari kamar madara.`,`Carbon dioxide reacts with lime water to form milky calcium carbonate.`],
+[`che`,`Which of the following is a noble gas?`,[`Nitrogen`,`Oxygen`,`Argon`,`Hydrogen`],2,`Argon na rukunin 18 (noble gases) kuma ba ya yin hulɗa da sauran abubuwa cikin sauƙi.`,`Argon is in Group 18, the noble (inert) gases.`],
+[`che`,`The best method of obtaining pure water from salty water is ____.`,[`Filtration`,`Distillation`,`Decantation`,`Sieving`],1,`Distillation: a tafasa ruwan, tururin ya sanyaya ya koma ruwa mai tsabta, gishiri kuma ya rage.`,`Distillation boils the water and condenses the vapour, leaving salt behind.`],
+[`che`,`Acid + base → salt + water. This reaction is called ____.`,[`Oxidation`,`Neutralisation`,`Decomposition`,`Combustion`],1,`Acid da base idan suka haɗu suka yi gishiri da ruwa, ana kiransa neutralisation.`,`The reaction of an acid with a base is neutralisation.`],
+[`che`,`Rusting of iron requires ____.`,[`oxygen only`,`water only`,`oxygen and water`,`nitrogen and water`],2,`Ƙarfe yana tsatsa idan akwai iska (oxygen) da ruwa ko danshi tare.`,`Rusting needs both oxygen and water (moisture).`],
+[`che`,`The most abundant gas in the air is ____.`,[`Oxygen`,`Carbon dioxide`,`Nitrogen`,`Argon`],2,`Nitrogen shi ne kusan 78% na iskar da ke kewaye da mu.`,`Nitrogen makes up about 78% of air.`],
+[`che`,`Which of these is an alkali metal?`,[`Calcium`,`Sodium`,`Iron`,`Copper`],1,`Sodium yana cikin Group 1 (alkali metals).`,`Sodium is in Group 1, the alkali metals.`],
+[`che`,`How many electrons are in the outer shell of a chlorine atom?`,[`1`,`5`,`7`,`8`],2,`Chlorine yana cikin Group 17, don haka yana da electrons 7 a babban layinsa.`,`Chlorine is in Group 17, so it has 7 outer electrons.`],
+[`che`,`Avogadro's number is approximately ____.`,[`6.02 x 10²³`,`3.0 x 10⁸`,`9.8`,`1.6 x 10⁻¹⁹`],0,`Avogadro's number shi ne adadin ƙwayoyi a cikin mole ɗaya: 6.02 x 10²³.`,`One mole contains 6.02 x 10²³ particles.`],
+[`che`,`Hardness of water is mainly caused by dissolved salts of ____.`,[`sodium and potassium`,`calcium and magnesium`,`iron and copper`,`chlorine and fluorine`],1,`Ruwa mai tauri yana da gishirin calcium da magnesium. Sabulu ba ya yin kumfa sosai a cikinsa.`,`Calcium and magnesium salts make water hard.`],
+[`che`,`The change of a solid directly into a gas is called ____.`,[`Melting`,`Evaporation`,`Sublimation`,`Condensation`],2,`Sublimation yana nufin daga ƙwaya (solid) kai tsaye zuwa gas, kamar naphthalene ko iodine.`,`Sublimation is solid to gas without becoming liquid.`],
+
+/* ---------- PHYSICS ---------- */
+[`phy`,`The SI unit of force is the ____.`,[`Joule`,`Newton`,`Watt`,`Pascal`],1,`Ana auna ƙarfi (force) da Newton (N).`,`Force is measured in newtons (N).`],
+[`phy`,`A car travels 120 km in 2 hours. Its average speed is ____.`,[`240 km/h`,`60 km/h`,`122 km/h`,`30 km/h`],1,`Speed = distance / time = 120 / 2 = 60 km/h.`,`Speed = distance / time = 120/2 = 60 km/h.`],
+[`phy`,`Which of the following is a vector quantity?`,[`Mass`,`Speed`,`Velocity`,`Time`],2,`Vector yana da girma da alkibla. Velocity yana da alkibla, speed kuwa ba shi da.`,`Velocity has magnitude and direction, so it is a vector.`],
+[`phy`,`A 5 Ω resistor carries a current of 2 A. The voltage across it is ____.`,[`2.5 V`,`7 V`,`10 V`,`0.4 V`],2,`Ohm's law: V = I x R = 2 x 5 = 10 V.`,`V = IR = 2 x 5 = 10 V.`],
+[`phy`,`The SI unit of power is the ____.`,[`Watt`,`Newton`,`Joule`,`Hertz`],0,`Power = work / time. Naúrarsa watt (W).`,`Power is measured in watts.`],
+[`phy`,`Light travels fastest in ____.`,[`water`,`glass`,`a vacuum`,`air`],2,`Haske yana tafiya mafi sauri a vacuum, kimanin 3 x 10⁸ m/s.`,`Light is fastest in a vacuum (about 3 x 10⁸ m/s).`],
+[`phy`,`The kinetic energy of a body of mass m moving with speed v is ____.`,[`mgh`,`½mv²`,`mv`,`ma`],1,`Kinetic energy = ½ x mass x speed².`,`KE = ½mv².`],
+[`phy`,`Which of these is a longitudinal wave?`,[`Light wave`,`Radio wave`,`Sound wave`,`Water ripple`],2,`Sauti tana tafiya ta matsawa da sakin iska a hanya ɗaya da motsin wave. Wannan longitudinal ne.`,`Sound is longitudinal: particles vibrate along the direction of travel.`],
+[`phy`,`The bending of light as it passes from one medium to another is called ____.`,[`Reflection`,`Refraction`,`Diffraction`,`Dispersion`],1,`Lankwasawar haske yayin shiga wani abu daban (kamar daga iska zuwa ruwa) ita ce refraction.`,`Bending of light at a boundary is refraction.`],
+[`phy`,`The acceleration due to gravity near the Earth's surface is about ____.`,[`1 m/s²`,`10 m/s²`,`100 m/s²`,`0 m/s²`],1,`g kusan 9.8 m/s², kuma ana ɗaukarsa 10 m/s² a lissafi.`,`g is about 9.8, often rounded to 10 m/s².`],
+[`phy`,`A body of mass 5 kg accelerates at 2 m/s². The force acting on it is ____.`,[`2.5 N`,`7 N`,`10 N`,`20 N`],2,`F = ma = 5 x 2 = 10 N.`,`F = ma = 5 x 2 = 10 N.`],
+[`phy`,`Atmospheric pressure is measured with a ____.`,[`thermometer`,`barometer`,`ammeter`,`hydrometer`],1,`Barometer ne ke auna matsawar iska.`,`A barometer measures atmospheric pressure.`],
+[`phy`,`Heat is transferred through fluids (liquids and gases) mainly by ____.`,[`conduction`,`convection`,`radiation only`,`insulation`],1,`A cikin ruwa da iska, zafi yana yaɗuwa ta convection: ruwan zafi yana tashi, mai sanyi yana ƙasa.`,`Convection currents carry heat through fluids.`],
+[`phy`,`An image formed by a plane mirror is ____.`,[`real and inverted`,`virtual and the same size as the object`,`real and magnified`,`virtual and diminished`],1,`Hoton madubi mai lebur virtual ne, girmansa ɗaya da abu, kuma gefe yana juyawa (lateral inversion).`,`A plane mirror gives a virtual, same-size, laterally inverted image.`],
+
+/* ---------- GOVERNMENT ---------- */
+[`gov`,`Nigeria became independent from Britain in ____.`,[`1914`,`1960`,`1963`,`1979`],1,`Najeriya ta sami 'yancin kai a ranar 1 ga Oktoba, 1960.`,`Nigeria gained independence on 1 October 1960.`],
+[`gov`,`Nigeria became a republic in ____.`,[`1960`,`1963`,`1966`,`1979`],1,`A 1963 Najeriya ta zama jamhuriya, Dr. Nnamdi Azikiwe ya zama shugaban ƙasa na farko (ceremonial).`,`Nigeria became a republic in 1963 with Nnamdi Azikiwe as first (ceremonial) President.`],
+[`gov`,`The first Executive President of Nigeria was ____.`,[`Nnamdi Azikiwe`,`Shehu Shagari`,`Olusegun Obasanjo`,`Abubakar Tafawa Balewa`],1,`Alhaji Shehu Shagari shi ne shugaban zartarwa na farko (1979). Azikiwe ceremonial ne, Balewa kuma Firayim Minista.`,`Shehu Shagari was the first Executive President (1979).`],
+[`gov`,`The three arms of government are ____.`,[`Army, Police and Navy`,`Legislature, Executive and Judiciary`,`Senate, House and Council`,`Federal, State and Local`],1,`Hannuwan gwamnati uku su ne: Legislature (yin doka), Executive (aiwatarwa), Judiciary (fassara doka).`,`Legislature makes laws, Executive implements them, Judiciary interprets them.`],
+[`gov`,`The arm of government that interprets the law is the ____.`,[`Legislature`,`Executive`,`Judiciary`,`Civil Service`],2,`Judiciary (kotuna) ce ke fassara doka da yanke hukunci.`,`The courts (Judiciary) interpret the law.`],
+[`gov`,`The present Constitution of Nigeria came into effect in ____.`,[`1960`,`1979`,`1989`,`1999`],3,`Kundin tsarin mulki na yanzu ya fara aiki ranar 29 ga Mayu, 1999.`,`The 1999 Constitution took effect on 29 May 1999.`],
+[`gov`,`Federalism is a system in which ____.`,[`all power is held by the central government`,`power is shared between the central and component units`,`the military rules`,`only the states have power`],1,`A tsarin tarayya (federalism), ana raba iko tsakanin gwamnatin tarayya da jihohi.`,`Power is divided between the federal and state governments.`],
+[`gov`,`The National Assembly of Nigeria consists of ____.`,[`Senate and House of Representatives`,`President and Vice President`,`Governors and Deputies`,`Judges and Lawyers`],0,`Majalisar Dokoki ta ƙasa ta ƙunshi Majalisar Dattawa (Senate) da Majalisar Wakilai.`,`The National Assembly = Senate + House of Representatives.`],
+[`gov`,`Universal adult suffrage means ____.`,[`only men can vote`,`all adult citizens have the right to vote`,`only the educated can vote`,`voting is compulsory`],1,`Yana nufin kowane babba ɗan ƙasa yana da damar yin zaɓe.`,`Every adult citizen has the right to vote.`],
+[`gov`,`Indirect rule in Northern Nigeria was introduced by ____.`,[`Lord Lugard`,`Sir Hugh Clifford`,`Sir Arthur Richards`,`Lord Macpherson`],0,`Lord Frederick Lugard ne ya kafa indirect rule a Arewa, ta amfani da sarakunan gargajiya.`,`Lord Lugard used traditional rulers to govern the North.`],
+[`gov`,`The Nigerian capital was officially moved from Lagos to Abuja in ____.`,[`1976`,`1985`,`1991`,`1999`],2,`An koma Abuja a hukumance a watan Disamba, 1991.`,`The seat of government moved to Abuja in December 1991.`],
+[`gov`,`INEC stands for ____.`,[`Independent National Electoral Commission`,`International Electoral Council`,`Inter-State Election Committee`,`Independent Nigerian Election Court`],0,`INEC hukuma ce da ke shirya zaɓuka a Najeriya.`,`INEC organises and supervises elections in Nigeria.`],
+[`gov`,`ECOWAS was formed in ____.`,[`1960`,`1975`,`1985`,`1999`],1,`An kafa ECOWAS a Lagos a 1975 don haɗin kan tattalin arziki na Yammacin Afirka.`,`ECOWAS was established in 1975 (Treaty of Lagos).`],
+
+/* ---------- ECONOMICS ---------- */
+[`eco`,`The basic economic problem is ____.`,[`inflation`,`scarcity`,`unemployment`,`taxation`],1,`Bukatun mutane ba su ƙarewa amma albarkatu kaɗan ne. Wannan shi ne scarcity.`,`Human wants are unlimited but resources are limited: scarcity.`],
+[`eco`,`Opportunity cost is ____.`,[`the money cost of a good`,`the next best alternative forgone`,`the cost of production`,`the price of a substitute`],1,`Opportunity cost shi ne abin da ka bari don ka zaɓi wani abu (zaɓi na biyu mafi kyau).`,`It is the value of the next best alternative given up.`],
+[`eco`,`According to the law of demand, when the price of a good rises, quantity demanded ____ (other things equal).`,[`rises`,`falls`,`stays the same`,`doubles`],1,`Idan farashi ya hau, mutane suna sayen kaɗan.`,`Price up, quantity demanded down.`],
+[`eco`,`Market equilibrium price is where ____.`,[`demand is zero`,`supply is zero`,`demand equals supply`,`price is lowest`],2,`Equilibrium shi ne inda adadin da ake buƙata ya yi daidai da adadin da ake samarwa.`,`Quantity demanded = quantity supplied.`],
+[`eco`,`GDP stands for ____.`,[`General Domestic Product`,`Gross Domestic Product`,`Gross Development Plan`,`Global Domestic Price`],1,`GDP shi ne jimillar kayayyaki da ayyukan da ƙasa ta samar a shekara.`,`Gross Domestic Product: total value of goods and services produced in a country.`],
+[`eco`,`The reward for labour as a factor of production is ____.`,[`rent`,`interest`,`wages`,`profit`],2,`Albashi (wages) ladan ma'aikaci ne. Rent na land, interest na capital, profit na entrepreneur.`,`Land: rent; Labour: wages; Capital: interest; Entrepreneur: profit.`],
+[`eco`,`Inflation is ____.`,[`a general and persistent rise in prices`,`a fall in prices`,`an increase in production`,`a rise in exports`],0,`Inflation shi ne hauhawar farashin kayayyaki gaba ɗaya, kuma yana ci gaba.`,`A general, sustained rise in the price level.`],
+[`eco`,`The apex bank in Nigeria is the ____.`,[`First Bank`,`Central Bank of Nigeria`,`Bank of Industry`,`NDIC`],1,`CBN ne babban banki da ke kula da kuɗi da bankunan ƙasa.`,`The CBN regulates money and banking.`],
+[`eco`,`A market with only one seller is called ____.`,[`monopoly`,`oligopoly`,`perfect competition`,`duopoly`],0,`Monopoly yana nufin mai sayarwa ɗaya tilo a kasuwa.`,`Mono = one: a single seller.`],
+[`eco`,`The main advantage of division of labour is ____.`,[`higher output through specialisation`,`lower wages`,`boredom`,`unemployment`],0,`Rarraba aiki yana sa kowa ya ƙware a abu ɗaya, saboda haka ana samar da kaya da yawa.`,`Workers specialise, so output increases.`],
+[`eco`,`Which of the following is an indirect tax?`,[`Personal income tax`,`Value Added Tax (VAT)`,`Company income tax`,`Capital gains tax`],1,`Indirect tax ana biya ta kayan da ake saye, kamar VAT. Mai saye ne ke biya amma mai sayarwa ne ke tara.`,`VAT is charged on goods and services and is an indirect tax.`],
+[`eco`,`Bread and butter are examples of ____ goods.`,[`substitute`,`complementary`,`inferior`,`free`],1,`Ana amfani da su tare, don haka complementary ne.`,`Goods consumed together are complements.`],
+[`eco`,`OPEC stands for ____.`,[`Organisation of Petroleum Exporting Countries`,`Organisation of Production and Economic Cooperation`,`Oil Producers' Economic Council`,`Organisation of Petrol and Energy Companies`],0,`OPEC ƙungiya ce ta ƙasashe masu fitar da mai. Najeriya mamba ce.`,`Nigeria is a member of OPEC.`],
+[`eco`,`A mixed economy is one in which ____.`,[`only the government produces`,`only individuals produce`,`both the private sector and the government take part`,`there is no money`],2,`Mixed economy yana da kamfanoni masu zaman kansu da gwamnati tare.`,`Private and public sectors both operate.`],
+
+/* ---------- ISLAMIC STUDIES ---------- */
+[`isl`,`How many pillars of Islam are there?`,[`3`,`4`,`5`,`6`],2,`Ginshiƙan Musulunci biyar ne: Shahada, Salah, Zakah, Azumi da Hajji.`,`The five pillars: Shahadah, Salah, Zakah, Sawm and Hajj.`],
+[`isl`,`The first revelation to the Prophet (SAW) was received in the cave of ____.`,[`Thawr`,`Hira`,`Uhud`,`Safa`],1,`Aya ta farko (Iqra') ta sauka a kogon Hira.`,`The first verses (Surah Al-Alaq) came in the cave of Hira.`],
+[`isl`,`The Prophet Muhammad (SAW) was born in ____.`,[`Madinah`,`Makkah`,`Ta'if`,`Jerusalem`],1,`An haifi Annabi (SAW) a Makkah a shekarar da ake kira Shekarar Giwa.`,`He was born in Makkah in the Year of the Elephant.`],
+[`isl`,`The first Khalifah after the death of the Prophet (SAW) was ____.`,[`Umar`,`Uthman`,`Abubakr`,`Ali`],2,`Sayyidina Abubakr (RA) shi ne Khalifa na farko, sai Umar, Uthman da Ali.`,`Order: Abubakr, Umar, Uthman, Ali (RA).`],
+[`isl`,`The Hijrah was the migration of the Prophet (SAW) from Makkah to ____.`,[`Ta'if`,`Madinah`,`Abyssinia`,`Jeddah`],1,`Hijira ita ce ƙaura daga Makkah zuwa Madinah. Daga nan ne kalandar Musulunci ta fara.`,`The Hijrah to Madinah marks the start of the Islamic calendar.`],
+[`isl`,`How many rak'ah are in Subh (Fajr) prayer?`,[`2`,`3`,`4`,`5`],0,`Sallar Asuba raka'a biyu ce.`,`Fajr consists of two rak'ahs.`],
+[`isl`,`The rate of Zakah on savings, gold and silver (above nisab) is ____.`,[`1%`,`2.5%`,`5%`,`10%`],1,`Zakkar kuɗi, zinariya da azurfa (idan sun kai nisabi kuma shekara ta zagayo) ita ce 2.5%.`,`Zakah is 2.5% of qualifying wealth held for a lunar year.`],
+[`isl`,`Muslims fast during the month of ____.`,[`Rajab`,`Sha'ban`,`Ramadan`,`Shawwal`],2,`Azumin wajibi a watan Ramadan ne.`,`The obligatory fast is in Ramadan.`],
+[`isl`,`The longest chapter of the Qur'an is ____.`,[`Al-Fatihah`,`Al-Baqarah`,`Al-Imran`,`An-Nisa`],1,`Suratul Baƙara ita ce mafi tsawo, tana da aya 286.`,`Al-Baqarah has 286 verses.`],
+[`isl`,`How many chapters (surahs) are in the Qur'an?`,[`100`,`110`,`114`,`120`],2,`Alƙur'ani yana da sura 114.`,`The Qur'an has 114 surahs.`],
+[`isl`,`The last Prophet of Allah is ____.`,[`Isa (AS)`,`Musa (AS)`,`Ibrahim (AS)`,`Muhammad (SAW)`],3,`Annabi Muhammad (SAW) shi ne cikamakin Annabawa.`,`Muhammad (SAW) is the seal of the prophets.`],
+[`isl`,`The angel who brought revelation to the Prophets is ____.`,[`Mikail`,`Israfil`,`Jibril`,`Izrail`],2,`Mala'ika Jibril (AS) shi ne ya kawo wahayi ga Annabawa.`,`Jibril (Gabriel) brought revelation.`],
+[`isl`,`Which of these is NOT one of the five pillars of Islam?`,[`Salah`,`Zakah`,`Hajj`,`Umrah`],3,`Umrah ibada ce mai girma amma ba ɗaya daga cikin ginshiƙai biyar ba.`,`Umrah is recommended, but not one of the five pillars.`],
+[`isl`,`Eid-ul-Fitr is celebrated at the end of ____.`,[`Hajj`,`Ramadan`,`Muharram`,`Rabi'ul Awwal`],1,`Ƙaramar Sallah (Eid-ul-Fitr) tana zuwa bayan an gama azumin Ramadan.`,`It marks the end of the fasting month.`],
+
+/* ---------- COMPUTER STUDIES ---------- */
+[`com`,`CPU stands for ____.`,[`Central Processing Unit`,`Computer Personal Unit`,`Central Program Utility`,`Control Processing Unit`],0,`CPU shi ne "kwakwalwar" kwamfuta; yana aiwatar da umarni.`,`The CPU is the brain of the computer.`],
+[`com`,`Which of these is an input device?`,[`Monitor`,`Printer`,`Keyboard`,`Speaker`],2,`Input device yana shigar da bayani kwamfuta, kamar keyboard da mouse.`,`A keyboard sends data into the computer.`],
+[`com`,`RAM is a ____ memory.`,[`volatile`,`permanent`,`read-only`,`optical`],0,`RAM yana rasa abin da ke cikinsa idan an kashe kwamfuta (volatile).`,`RAM loses its contents when power is off.`],
+[`com`,`The binary number system uses the digits ____.`,[`0 and 1`,`1 and 2`,`0 to 9`,`0 to 7`],0,`Kwamfuta tana amfani da binary: 0 da 1 kaɗai.`,`Binary uses only 0 and 1.`],
+[`com`,`The binary number 101 is equal to ____ in decimal.`,[`3`,`4`,`5`,`6`],2,`1x4 + 0x2 + 1x1 = 5.`,`1x4 + 0x2 + 1x1 = 5.`],
+[`com`,`Which of these is an operating system?`,[`Microsoft Excel`,`Windows`,`Google Chrome`,`Facebook`],1,`Operating system yana sarrafa kwamfuta. Windows, Linux da Android misalai ne.`,`Windows is an operating system.`],
+[`com`,`Which software is used mainly for word processing?`,[`Microsoft Word`,`Microsoft Excel`,`Microsoft Access`,`Windows`],0,`Microsoft Word ana amfani da shi wajen rubutu da wasiƙu.`,`MS Word is a word processor.`],
+[`com`,`WWW stands for ____.`,[`World Wide Web`,`Wide World Web`,`Web Wide World`,`World Web Wide`],0,`WWW yana nufin duk shafukan yanar gizo da ke haɗe.`,`World Wide Web.`],
+[`com`,`A modem is used to ____.`,[`print documents`,`connect a computer to the internet`,`store files`,`scan photos`],1,`Modem yana haɗa kwamfuta da intanet.`,`A modem connects a computer to the internet.`],
+[`com`,`One byte is equal to ____ bits.`,[`4`,`8`,`16`,`1024`],1,`Byte 1 = bit 8.`,`1 byte = 8 bits.`],
+[`com`,`Which of these is an output device?`,[`Mouse`,`Scanner`,`Printer`,`Keyboard`],2,`Printer yana fitar da bayani daga kwamfuta zuwa takarda.`,`A printer outputs information from the computer.`],
+[`com`,`A program designed to harm a computer is called ____.`,[`freeware`,`malware`,`firmware`,`hardware`],1,`Malware software ne mai cutarwa, kamar virus.`,`Malware = malicious software (viruses, worms, ransomware).`],
+[`com`,`The file extension of a modern Microsoft Word document is ____.`,[`.xlsx`,`.pptx`,`.docx`,`.pdf`],2,`Takardar Word tana da ƙarin .docx.`,`.docx is the Word format.`],
+[`com`,`URL stands for ____.`,[`Uniform Resource Locator`,`Universal Reading Link`,`Unified Resource List`,`User Resource Link`],0,`URL shi ne adireshin shafin yanar gizo, misali https://example.com.`,`A URL is the web address of a page.`]
+];
+
+/* ================= STUDY NOTES (Hausa, English) ================= */
+const NOTES={
+eng:[
+[`Present simple: he/she/it yana ɗaukar -s (she goes). Don abubuwa da ke faruwa kullum.`,`Present simple: he/she/it takes -s (she goes). Used for habits and facts.`],
+[`Kalmomi marasa ka'ida: buy→bought, go→went, eat→ate, write→wrote, see→saw.`,`Irregular verbs: buy→bought, go→went, eat→ate, write→wrote, see→saw.`],
+[`Since = takamaiman lokaci (since 2015). For = tsawon lokaci (for 3 years).`,`Since = point in time; for = length of time.`],
+[`Comparative don biyu (taller); superlative don uku ko fiye (tallest).`,`Comparative for two (taller); superlative for three or more (tallest).`],
+[`Synonym = ma'ana iri ɗaya. Antonym = akasin ma'ana. Ka karanta jumlar kafin ka zaɓa.`,`Synonym = same meaning; antonym = opposite. Read the whole sentence before choosing.`],
+[`Figures of speech: simile (like/as), metaphor, personification, hyperbole (ƙari).`,`Figures of speech: simile (like/as), metaphor, personification, hyperbole (exaggeration).`]
+],
+mat:[
+[`Area: rectangle = l x w; triangle = ½ x b x h; circle = πr².`,`Area: rectangle = l x w; triangle = ½ x b x h; circle = πr².`],
+[`Perimeter: rectangle = 2(l + w); square = 4s; circle = 2πr.`,`Perimeter: rectangle = 2(l + w); square = 4s; circle = 2πr.`],
+[`Pythagoras: a² + b² = c² (c shi ne hypotenuse).`,`Pythagoras: a² + b² = c² (c is the hypotenuse).`],
+[`Indices: aᵐ x aⁿ = aᵐ⁺ⁿ; aᵐ / aⁿ = aᵐ⁻ⁿ; a⁻ⁿ = 1/aⁿ; a⁰ = 1.`,`Indices: aᵐ x aⁿ = aᵐ⁺ⁿ; aᵐ / aⁿ = aᵐ⁻ⁿ; a⁻ⁿ = 1/aⁿ; a⁰ = 1.`],
+[`Simple interest = PRT/100. Average = jimla / adadi.`,`Simple interest = PRT/100. Average = sum / number of items.`],
+[`Factorising: a² - b² = (a+b)(a-b). Quadratic: nemo lambobi biyu masu ninkawa c kuma suna haɗawa b.`,`Factorising: a² - b² = (a+b)(a-b). For x² + bx + c, find two numbers that multiply to c and add to b.`]
+],
+bio:[
+[`Cell: nucleus (umarni), mitochondria (kuzari), chloroplast (photosynthesis), cell wall (tsirrai kaɗai).`,`Cell: nucleus (control), mitochondria (energy), chloroplast (photosynthesis), cell wall (plants only).`],
+[`Photosynthesis: carbon dioxide + ruwa + hasken rana → glucose + oxygen.`,`Photosynthesis: carbon dioxide + water + light → glucose + oxygen.`],
+[`Rukunan abinci: carbohydrate, protein, fat, vitamins, minerals, ruwa, fibre.`,`Food classes: carbohydrates, proteins, fats, vitamins, minerals, water, fibre.`],
+[`Cututtuka: malaria (Anopheles), kwalara (Vibrio, ruwa mara tsabta), taifod (Salmonella), sleeping sickness (tsetse fly).`,`Diseases: malaria (Anopheles), cholera (Vibrio, dirty water), typhoid (Salmonella), sleeping sickness (tsetse fly).`],
+[`Rashin vitamin: A → night blindness; C → scurvy; D → rickets; B1 → beriberi. Rashin protein → kwashiorkor.`,`Deficiencies: A → night blindness; C → scurvy; D → rickets; B1 → beriberi. Protein lack → kwashiorkor.`],
+[`Jini: rukunai A, B, AB, O. O universal donor, AB universal recipient.`,`Blood groups: A, B, AB, O. O is the universal donor, AB the universal recipient.`]
+],
+che:[
+[`Alamomi: Na sodium, K potassium, Ca calcium, Fe iron, Cu copper, Zn zinc, Pb lead, Ag silver, Au gold.`,`Symbols: Na sodium, K potassium, Ca calcium, Fe iron, Cu copper, Zn zinc, Pb lead, Ag silver, Au gold.`],
+[`Atomic number = protons. Mass number = protons + neutrons. Atom mai tsaka-tsaki: protons = electrons.`,`Atomic number = protons. Mass number = protons + neutrons. In a neutral atom, protons = electrons.`],
+[`pH: ƙasa da 7 acid; 7 neutral; sama da 7 base.`,`pH: below 7 acid; 7 neutral; above 7 base.`],
+[`Rabon cakuda: filtration, evaporation, distillation, chromatography, decantation.`,`Separating mixtures: filtration, evaporation, distillation, chromatography, decantation.`],
+[`Mole: 1 mole = 6.02 x 10²³ particles. Moles = mass / molar mass.`,`Mole: 1 mole = 6.02 x 10²³ particles. Moles = mass / molar mass.`],
+[`Acid + base → salt + water (neutralisation). Acid + metal → salt + hydrogen.`,`Acid + base → salt + water (neutralisation). Acid + metal → salt + hydrogen.`]
+],
+phy:[
+[`Speed = distance / time. Acceleration = (v - u) / t.`,`Speed = distance / time. Acceleration = (v - u) / t.`],
+[`Newton: F = ma. Weight = mg (g ≈ 10 m/s²).`,`Newton: F = ma. Weight = mg (g ≈ 10 m/s²).`],
+[`Work = F x d. Power = work / time. KE = ½mv². PE = mgh.`,`Work = F x d. Power = work / time. KE = ½mv². PE = mgh.`],
+[`Ohm: V = IR. Series: R = R1 + R2. Power = IV.`,`Ohm: V = IR. Series: R = R1 + R2. Power = IV.`],
+[`Wave: v = fλ. Haske yana da transverse; sauti longitudinal ne.`,`Wave: v = fλ. Light is transverse; sound is longitudinal.`],
+[`Zafi yana yaɗuwa ta conduction (ƙwaya), convection (ruwa/iska), radiation (ba tare da abu ba).`,`Heat transfers by conduction (solids), convection (fluids), radiation (no medium needed).`]
+],
+gov:[
+[`Hannuwan gwamnati: Legislature (doka), Executive (aiwatarwa), Judiciary (kotu).`,`Arms of government: Legislature (laws), Executive (implements), Judiciary (courts).`],
+[`Mahimman shekaru: 1914 haɗa Arewa da Kudu; 1960 'yancin kai; 1963 jamhuriya; 1979 shugaban zartarwa na farko; 1999 mulkin dimokuraɗiyya na yanzu.`,`Key dates: 1914 amalgamation; 1960 independence; 1963 republic; 1979 first executive presidency; 1999 current democratic era.`],
+[`Federalism: ana raba iko tsakanin tarayya da jihohi. Unitary: iko a hannun tsakiya.`,`Federalism: power shared between federal and state governments. Unitary: power at the centre.`],
+[`Zaɓe: INEC tana shirya zaɓe. Suffrage = damar yin zaɓe.`,`Elections: INEC organises them. Suffrage = right to vote.`],
+[`Ƙungiyoyin ƙasashen waje: ECOWAS (1975), AU, UN, OPEC, Commonwealth.`,`International bodies: ECOWAS (1975), AU, UN, OPEC, Commonwealth.`]
+],
+eco:[
+[`Scarcity → choice → opportunity cost. Wannan shi ne ginshiƙin tattalin arziki.`,`Scarcity → choice → opportunity cost. This is the foundation of economics.`],
+[`Demand & supply: farashi ya hau → buƙata ta ragu, samarwa ya ƙaru. Equilibrium = demand ya yi daidai da supply.`,`Demand & supply: price up → demand falls, supply rises. Equilibrium = demand equals supply.`],
+[`Factors of production: land (rent), labour (wages), capital (interest), entrepreneur (profit).`,`Factors of production: land (rent), labour (wages), capital (interest), entrepreneur (profit).`],
+[`Kuɗi: yana aiki wajen musaya, auna daraja, adana daraja, da biyan bashi.`,`Money: medium of exchange, measure of value, store of value, standard for deferred payment.`],
+[`Inflation = hauhawar farashi. Deflation = faɗuwar farashi. GDP = jimillar abin da ƙasa ta samar.`,`Inflation = rising prices. Deflation = falling prices. GDP = total output of a country.`]
+],
+isl:[
+[`Ginshiƙai 5: Shahada, Salah, Zakah, Sawm (azumi), Hajj.`,`Five pillars: Shahadah, Salah, Zakah, Sawm, Hajj.`],
+[`Rukunan Imani 6: Allah, Mala'iku, Littattafai, Annabawa, Ranar Lahira, Ƙaddara.`,`Six articles of faith: Allah, angels, books, prophets, the Last Day, destiny (Qadr).`],
+[`Khulafa'u Rashidun: Abubakr, Umar, Uthman, Ali (RA).`,`Rightly-guided Caliphs: Abubakr, Umar, Uthman, Ali (RA).`],
+[`Alƙur'ani: sura 114, juzu'i 30. Mafi tsayi: Baƙara. Mafi gajarta: Kauthar.`,`Qur'an: 114 surahs, 30 juz. Longest: Al-Baqarah. Shortest: Al-Kawthar.`],
+[`Raka'o'in sallah: Asuba 2, Azahar 4, La'asar 4, Magariba 3, Isha'i 4.`,`Rak'ahs: Fajr 2, Dhuhr 4, Asr 4, Maghrib 3, Isha 4.`]
+],
+com:[
+[`Hardware = sassan da ake taɓawa. Software = shirye-shirye.`,`Hardware = physical parts. Software = programs.`],
+[`Input: keyboard, mouse, scanner. Output: monitor, printer, speaker. Storage: HDD, SSD, flash drive.`,`Input: keyboard, mouse, scanner. Output: monitor, printer, speaker. Storage: HDD, SSD, flash drive.`],
+[`Binary → decimal: kowane lamba yana ninka 2. Misali 101 = 4 + 0 + 1 = 5.`,`Binary → decimal: each place doubles. Example 101 = 4 + 0 + 1 = 5.`],
+[`1 byte = 8 bits; 1 KB = 1024 bytes; 1 MB = 1024 KB; 1 GB = 1024 MB.`,`1 byte = 8 bits; 1 KB = 1024 bytes; 1 MB = 1024 KB; 1 GB = 1024 MB.`],
+[`Internet: WWW, URL, browser, email, ISP. Kare kanka daga malware da phishing.`,`Internet: WWW, URL, browser, email, ISP. Protect yourself from malware and phishing.`]
+]
+};
+
+/* ================= HEALTH CONTENT =================
+ sections kinds: info | do | dont | danger
+ each item: [Hausa, English]
+*/
+const HEALTH=[
+{id:`malaria`,ic:`🦟`,ha:`Zazzabin cizon sauro`,en:`Malaria`,tools:[],secs:[
+{k:`info`,h:[`Abin da ya kamata ka sani`,`What to know`],i:[
+[`Ana kamuwa da zazzabin cizon sauro ta cizon sauron Anopheles mace.`,`Malaria spreads through the bite of the female Anopheles mosquito.`],
+[`Alamomi: zazzaɓi, sanyi da rawar jiki, ciwon kai, ciwon jiki, amai da rashin ƙarfi.`,`Signs: fever, chills, headache, body pain, vomiting and weakness.`],
+[`Yara 'yan ƙasa da shekara 5 da masu juna biyu suna cikin haɗari sosai.`,`Children under 5 and pregnant women are at highest risk.`]]},
+{k:`do`,h:[`Abin da za ka yi`,`What to do`],i:[
+[`Kwana a cikin gidan sauro (ITN) kowane dare.`,`Sleep under an insecticide-treated net every night.`],
+[`Zubar da ruwan da ya tsaya a kewayen gida; rufe randunan ruwa.`,`Drain stagnant water around the home and cover water containers.`],
+[`Yi gwaji (RDT) a asibiti kafin shan magani, kuma ka kammala maganin da aka ba ka.`,`Get tested (RDT) at a clinic before treatment and finish the full course you are given.`],
+[`A arewacin Najeriya, yara 'yan wata 3 zuwa 59 suna samun maganin SMC a lokacin damina. Ka tambayi cibiyar lafiya.`,`In northern Nigeria, children aged 3 to 59 months get seasonal malaria chemoprevention (SMC) in the rainy season. Ask your health centre.`]]},
+{k:`dont`,h:[`Abin da bai kamata ka yi ba`,`What to avoid`],i:[
+[`Kada ka sha magani ba tare da gwaji ko shawarar ma'aikacin lafiya ba.`,`Do not self-medicate without a test or a health worker's advice.`]]},
+{k:`danger`,h:[`Je asibiti nan take idan:`,`Go to hospital now if:`],i:[
+[`Ya suma, ya rikice, ko yana da girgizar jiki (convulsion).`,`Unconscious, confused, or having convulsions.`],
+[`Ba ya iya sha ko cin abinci, ko yana amai ba tsayawa.`,`Cannot drink or eat, or vomits repeatedly.`],
+[`Fitsari ya yi duhu sosai, idanu sun yi rawaya, ko numfashi yana wahala.`,`Very dark urine, yellow eyes, or difficulty breathing.`]]}
+]},
+
+{id:`diarrhoea`,ic:`💧`,ha:`Gudawa da ORS`,en:`Diarrhoea and ORS`,tools:[`ors`],secs:[
+{k:`info`,h:[`Abin da ya kamata ka sani`,`What to know`],i:[
+[`Gudawa tana kashe ruwan jiki. Babban haɗari shi ne rashin ruwa a jiki (dehydration).`,`Diarrhoea drains body fluids. The main danger is dehydration.`],
+[`Ka ci gaba da shayar da jariri nono, kuma ka ci gaba da ciyar da yaro abinci.`,`Keep breastfeeding and keep feeding the child.`]]},
+{k:`do`,h:[`Abin da za ka yi`,`What to do`],i:[
+[`Ba da ORS bayan kowace bayan gida mai ruwa. Za ka iya yin ORS a gida (duba kayan aikin ORS).`,`Give ORS after every loose stool. You can make ORS at home (see the ORS tool).`],
+[`Ba yara zinc na kwana 10 zuwa 14 kamar yadda ma'aikacin lafiya ya shawarta.`,`Give zinc for 10 to 14 days as a health worker advises.`],
+[`Wanke hannu da sabulu bayan bayan gida da kafin cin abinci.`,`Wash hands with soap after the toilet and before eating.`]]},
+{k:`dont`,h:[`Abin da bai kamata ka yi ba`,`What to avoid`],i:[
+[`Kada ka ba yara magungunan tsayar da gudawa (kamar loperamide).`,`Do not give children anti-diarrhoea drugs (like loperamide).`],
+[`Kada ka daina ba da ruwa ko abinci.`,`Do not stop fluids or food.`]]},
+{k:`danger`,h:[`Je asibiti nan take idan:`,`Go to hospital now if:`],i:[
+[`Gudawar tana kama da ruwan shinkafa, ko tana da jini.`,`The stool is like rice water, or has blood.`],
+[`Idanu sun lulluɓe, baki ya bushe, babu fitsari na sa'o'i 6 ko fiye, ko yaro ya yi laushi sosai.`,`Sunken eyes, dry mouth, no urine for 6 hours or more, or the child is very weak or sleepy.`],
+[`Ba ya iya sha, ko babu sauƙi bayan kwana 2 (ko da wuri idan jariri ne).`,`Cannot drink, or no improvement after 2 days (sooner for a baby).`]]}
+]},
+
+{id:`water`,ic:`🧼`,ha:`Tsabta da ruwan sha`,en:`Hygiene and safe water`,tools:[],secs:[
+{k:`info`,h:[`Abin da ya kamata ka sani`,`What to know`],i:[
+[`Kwalara, taifod da gudawa suna yaɗuwa ta ruwa da abinci marasa tsabta.`,`Cholera, typhoid and diarrhoea spread through unsafe water and food.`]]},
+{k:`do`,h:[`Abin da za ka yi`,`What to do`],i:[
+[`Wanke hannu da sabulu: bayan bayan gida, kafin girki ko cin abinci, da bayan wanke jariri.`,`Wash hands with soap: after the toilet, before cooking or eating, and after cleaning a baby.`],
+[`Tafasa ruwa na minti 1 bayan ya fara tafasa sosai, ko ka yi amfani da maganin tsabtace ruwa (kamar Aquatabs) bisa umarni.`,`Boil water for 1 minute after it starts to boil, or use water-treatment tablets (e.g. Aquatabs) as directed.`],
+[`Ajiye ruwan sha a rufaffen kwano mai tsabta.`,`Store drinking water in a clean, covered container.`],
+[`Yi amfani da bayan gida; kada ka yi bayan gida a fili.`,`Use a toilet; avoid open defecation.`],
+[`Rufe abinci, wanke kayan lambu da 'ya'yan itace, kuma ka dafa nama sosai.`,`Cover food, wash vegetables and fruit, and cook meat thoroughly.`]]},
+{k:`danger`,h:[`Je cibiyar lafiya nan take idan:`,`Go to a health centre now if:`],i:[
+[`Gudawa ta fara kwatsam, mai ruwa da yawa, tare da amai. A riƙa shan ORS a hanya.`,`Sudden heavy watery diarrhoea with vomiting (possible cholera). Keep sipping ORS on the way.`]]}
+]},
+
+{id:`pregnancy`,ic:`🤰`,ha:`Kula da mai juna biyu`,en:`Pregnancy care`,tools:[`edd`],secs:[
+{k:`info`,h:[`Abin da ya kamata ka sani`,`What to know`],i:[
+[`Ka fara awon ciki (ANC) da wuri. WHO ta shawarta aƙalla ziyara 8 a lokacin ciki.`,`Start antenatal care (ANC) early. WHO recommends at least 8 contacts during pregnancy.`]]},
+{k:`do`,h:[`Abin da za ka yi`,`What to do`],i:[
+[`Sha maganin iron da folic acid da ma'aikacin lafiya ya ba ka.`,`Take the iron and folic acid supplements your health worker gives you.`],
+[`Kwana a gidan sauro, kuma ka ci abinci iri-iri: wake, ganye, nama ko kifi, ƙwai, 'ya'yan itace.`,`Sleep under a net and eat varied foods: beans, leafy greens, meat or fish, eggs, fruit.`],
+[`Ka haihu a asibiti ko cibiyar lafiya tare da ƙwararren ma'aikacin lafiya.`,`Deliver at a health facility with a skilled birth attendant.`],
+[`Ka shirya wuri, sufuri, kuɗi da wanda zai raka ka tun kafin nakuda.`,`Plan ahead: facility, transport, money and a companion before labour starts.`]]},
+{k:`dont`,h:[`Abin da bai kamata ka yi ba`,`What to avoid`],i:[
+[`Kada ka sha magungunan gargajiya ko na kemis ba tare da shawarar ma'aikacin lafiya ba.`,`Avoid herbal mixtures or drugs not recommended by a health worker.`]]},
+{k:`danger`,h:[`Je asibiti nan take idan:`,`Go to hospital now if:`],i:[
+[`Jini yana zuba daga farji.`,`Bleeding from the vagina.`],
+[`Ciwon kai mai tsanani, gani ya dishe, ko fuska da hannaye sun kumbura.`,`Severe headache, blurred vision, or swollen face and hands.`],
+[`Girgizar jiki (convulsion), zazzaɓi mai ƙarfi, ko ciwon ciki mai tsanani.`,`Convulsions, high fever, or severe abdominal pain.`],
+[`Jariri ya daina motsi, ko ruwan mahaifa ya zubo kafin nakuda.`,`The baby stops moving, or water breaks before labour.`]]}
+]},
+
+{id:`child`,ic:`👶`,ha:`Kula da jariri da yaro`,en:`Baby and child care`,tools:[`vax`],secs:[
+{k:`info`,h:[`Abin da ya kamata ka sani`,`What to know`],i:[
+[`Ka shayar da jariri nono kaɗai har wata 6. Kada ka ba shi ruwa, kunu ko komai.`,`Exclusive breastfeeding for the first 6 months. No water, pap or other foods.`],
+[`Daga wata 6, ka fara ba da abinci mai gina jiki tare da nono har shekara 2.`,`From 6 months add nutritious foods and keep breastfeeding up to 2 years.`]]},
+{k:`do`,h:[`Abin da za ka yi`,`What to do`],i:[
+[`Ka yi allurar rigakafi a lokaci (duba Jadawalin allura).`,`Keep vaccinations on time (see the Vaccine planner).`],
+[`Ka auna girman yaro a asibiti akai-akai, kuma ka karɓi Vitamin A idan ana rabawa.`,`Have the child weighed regularly at the clinic and take Vitamin A when offered.`],
+[`Idan yaro yana da zazzaɓi: sa masa tufafi masu sauƙi, ba shi ruwa ko nono, kuma ka kai shi a gwada shi. Paracetamol kawai bisa adadin da ma'aikacin lafiya ko takardar magani suka nuna.`,`For fever: light clothing, plenty of fluids or breast milk, and get the child tested. Paracetamol only at the dose a health worker or the label shows.`]]},
+{k:`dont`,h:[`Abin da bai kamata ka yi ba`,`What to avoid`],i:[
+[`Kada ka ba yara aspirin. Kada ka kunsa yaro mai zazzaɓi da tufafi masu yawa.`,`Do not give children aspirin. Do not wrap a feverish child in heavy clothes.`]]},
+{k:`danger`,h:[`Alamomin hatsari: je asibiti nan take`,`Danger signs: go to hospital now`],i:[
+[`Ba ya iya sha ko shan nono.`,`Cannot drink or breastfeed.`],
+[`Yana amai duk abin da ya ci ko ya sha.`,`Vomits everything.`],
+[`Yana da girgizar jiki (convulsion).`,`Has convulsions.`],
+[`Ya yi laushi sosai ko ba a iya tashe shi.`,`Very sleepy or cannot be woken.`],
+[`Numfashi da sauri ko wahala, ko ƙirji yana jan ciki.`,`Fast or difficult breathing, or the chest pulls in.`]]}
+]},
+
+{id:`firstaid`,ic:`🩹`,ha:`Agajin gaggawa`,en:`First aid`,tools:[],secs:[
+{k:`do`,h:[`Zubar jini`,`Bleeding`],i:[
+[`Danna wurin da ƙarfi da kyalle mai tsabta. Ɗaga wurin sama.`,`Press firmly with a clean cloth. Raise the limb.`],
+[`Idan kyallen ya jiƙe da jini, ƙara wani a kai, kada ka cire na farko. Je asibiti idan jinin yana yawa.`,`If it soaks through, add more cloth on top; don't remove the first. Go to hospital if bleeding is heavy.`]]},
+{k:`do`,h:[`Konewa`,`Burns`],i:[
+[`Zuba ruwan famfo mai sanyi a wurin na minti 20. Cire zobe ko abu mai matsewa kafin ya kumbura.`,`Cool under clean running water for 20 minutes. Remove rings or tight items before swelling.`],
+[`Rufe da kyalle mai tsabta a hankali. Kada ka shafa man shafawa, man gyaɗa, man goge baki ko ƙanƙara. Kada ka fasa kumburi.`,`Cover loosely with a clean cloth. Don't apply toothpaste, butter, oil or ice. Don't pop blisters.`],
+[`Je asibiti idan konewar tana da girma, a fuska, hannu, ƙafa, al'aura, ko a yaro.`,`Go to hospital if the burn is large, on the face, hands, feet or genitals, or on a child.`]]},
+{k:`danger`,h:[`Cizon maciji`,`Snake bite`],i:[
+[`Ka kwantar da hankali. Ka riƙe wurin a natse, kar ya motsa sosai. Cire zobe ko agogo.`,`Stay calm. Keep the limb still. Remove rings and watches.`],
+[`Kai shi asibiti nan take; maganin cizon maciji yana asibiti.`,`Get to a hospital immediately; antivenom is given there.`],
+[`Kada ka yanka wurin, kada ka tsotsa, kada ka ɗaure shi da ƙarfi, kuma kada ka shafa magani na gargajiya.`,`Do not cut, suck, tie tightly, or apply herbs.`]]},
+{k:`do`,h:[`Shaƙewa`,`Choking`],i:[
+[`Ka ce wa mutum ya yi tari. Idan ya kasa tari ko magana: buga masa baya sau 5 tsakanin ƙashin kafaɗa.`,`Encourage coughing. If he cannot cough or speak: 5 firm back blows between the shoulder blades.`],
+[`Idan bai fita ba: matsa ciki sau 5 (abdominal thrusts). Jariri: buga baya sau 5, sannan matsa ƙirji da yatsu biyu sau 5.`,`If still stuck: 5 abdominal thrusts. For a baby: 5 back blows then 5 chest thrusts with two fingers.`]]},
+{k:`do`,h:[`Farfaɗiya ko girgizar jiki`,`Seizure or convulsion`],i:[
+[`Ka kwantar da shi a gefe a wuri mai laushi, ka cire abubuwa masu cutarwa kusa da shi.`,`Lay him on his side on a soft area and clear dangerous objects.`],
+[`Kada ka sa komai a bakinsa. Ka kula da lokaci. Kira taimako idan ya wuce minti 5 ko shi ne karo na farko.`,`Put nothing in his mouth. Note the time. Get help if it lasts over 5 minutes or it is the first time.`]]},
+{k:`danger`,h:[`Shan fetur, kananzir ko guba`,`Swallowed kerosene or poison`],i:[
+[`Kada ka sa shi ya yi amai. Kada ka ba shi madara ko wani abu.`,`Do not make him vomit. Do not give milk or other drinks.`],
+[`Kai shi asibiti nan take kuma ka tafi da kwalbar abin da ya sha.`,`Go to hospital immediately and take the container with you.`]]},
+{k:`do`,h:[`Suma`,`Fainting`],i:[
+[`Kwantar da shi, ɗaga ƙafafunsa sama, sassauta tufafi. Idan bai farfaɗo cikin minti 1 ba, nemi taimako.`,`Lay him down, raise the legs, loosen clothes. If he does not recover within 1 minute, get help.`]]},
+{k:`danger`,h:[`Lambar gaggawa`,`Emergency number`],i:[
+[`Kira 112 a Najeriya. Ka faɗi inda kake da abin da ya faru.`,`Call 112 in Nigeria. Say where you are and what happened.`]]}
+]},
+
+{id:`nutrition`,ic:`🥗`,ha:`Abinci mai gina jiki`,en:`Healthy eating`,tools:[],secs:[
+{k:`info`,h:[`Abin da ya kamata ka sani`,`What to know`],i:[
+[`Kowane abinci ya kamata ya haɗa: abinci mai kuzari (tuwo, shinkafa, gero, dawa), mai gina jiki (wake, ƙwai, nama, kifi, madara), da kayan lambu da 'ya'yan itace.`,`Each meal should mix energy foods (tuwo, rice, millet, sorghum), body-building foods (beans, eggs, meat, fish, milk), and vegetables and fruit.`],
+[`Abinci masu iron: hanta, wake, ganye kore. Masu Vitamin A: karas, mangwaro, gwanda, jan mai.`,`Iron-rich: liver, beans, dark green leaves. Vitamin A: carrots, mango, pawpaw, red palm oil.`],
+[`Yi amfani da gishiri mai iodine.`,`Use iodised salt.`]]},
+{k:`do`,h:[`Abin da za ka yi`,`What to do`],i:[
+[`Sha ruwa sosai, ka rage abin sha mai zaki da gishiri ko mai da yawa.`,`Drink plenty of water; cut down on sugary drinks and too much salt or oil.`],
+[`Ka auna damtsen yaro (MUAC) a asibiti. Idan ya yi ƙasa da 11.5 cm, yaro yana da tamowa mai tsanani.`,`Measure a child's mid-upper arm (MUAC) at the clinic. Below 11.5 cm means severe acute malnutrition.`]]},
+{k:`danger`,h:[`Je cibiyar lafiya idan:`,`See a health centre if:`],i:[
+[`Yaro ya kumbura ƙafafu, ya rame sosai, ko gashinsa ya canza launi.`,`A child has swollen feet, severe wasting, or changed hair colour.`]]}
+]},
+
+{id:`ncd`,ic:`🩺`,ha:`Hawan jini da ciwon sukari`,en:`Blood pressure and diabetes`,tools:[`bmi`],secs:[
+{k:`info`,h:[`Abin da ya kamata ka sani`,`What to know`],i:[
+[`Hawan jini sau da yawa ba ya da alama. A auna jini akai-akai, musamman bayan shekaru 30.`,`High blood pressure often has no signs. Check regularly, especially after age 30.`],
+[`Alamomin ciwon sukari: fitsari akai-akai, ƙishirwa, rama, gajiya, da raunuka masu jinkirin warkewa.`,`Diabetes signs: frequent urination, thirst, weight loss, tiredness, slow-healing wounds.`]]},
+{k:`do`,h:[`Abin da za ka yi`,`What to do`],i:[
+[`Rage gishiri da mai, ka ci kayan lambu, ka yi motsa jiki (tafiya ta mintuna 30 a rana), ka guji taba.`,`Cut salt and oil, eat vegetables, exercise (30 minutes of walking a day), avoid tobacco.`],
+[`Idan karatun jininka ya kai 140/90 ko sama sau fiye da ɗaya, ka ga likita.`,`If your reading is 140/90 or higher more than once, see a doctor.`]]},
+{k:`danger`,h:[`Shanyewar jiki (stroke): je asibiti nan take`,`Stroke (act FAST): go now`],i:[
+[`Fuska ta karkata, hannu ko ƙafa sun yi rauni, ko magana ta yi wahala.`,`Face drooping, arm or leg weakness, or slurred speech.`]]}
+]}
+];
+
+/* ================= VACCINE SCHEDULE (Nigeria routine, simplified) ================= */
+const VAX=[
+{k:`b`,ha:`Lokacin haihuwa`,en:`At birth`,w:0,v:[`BCG`,`OPV 0`,`Hep B 0`]},
+{k:`w6`,ha:`Makonni 6`,en:`6 weeks`,w:6,v:[`Penta 1`,`PCV 1`,`OPV 1`,`Rota 1`]},
+{k:`w10`,ha:`Makonni 10`,en:`10 weeks`,w:10,v:[`Penta 2`,`PCV 2`,`OPV 2`,`Rota 2`]},
+{k:`w14`,ha:`Makonni 14`,en:`14 weeks`,w:14,v:[`Penta 3`,`PCV 3`,`OPV 3`,`IPV`]},
+{k:`m9`,ha:`Watanni 9`,en:`9 months`,m:9,v:[`Measles`,`Yellow Fever`,`Vitamin A`]}
+];
+
+/* ================= DAILY TIPS [Hausa, English] ================= */
+const TIPS=[
+[`Wanke hannu da sabulu yana rage gudawa da cututtuka da yawa.`,`Washing hands with soap cuts diarrhoea and many other infections.`],
+[`Kwana a gidan sauro kowane dare yana kare ka daga zazzabin cizon sauro.`,`Sleeping under a net every night protects you from malaria.`],
+[`Ka ware wani ɓangare na kowane kuɗin da ka samu a matsayin ajiya, ko da kaɗan ne.`,`Set aside part of every income as savings, even a small amount.`],
+[`Kada ka taɓa ba kowa OTP, PIN ko BVN ɗinka. Banki ba ya tambaya.`,`Never share your OTP, PIN or BVN. Your bank will not ask for them.`],
+[`Karanta darasi na mintuna 25, ka huta 5. Wannan hanya tana taimakawa tunawa.`,`Study for 25 minutes, rest for 5. This helps memory.`],
+[`Ka rubuta abin da ka kashe a kullum. Ba za ka san inda kuɗinka ke tafiya ba sai ka rubuta.`,`Write down what you spend each day. You cannot manage what you do not track.`],
+[`Shayar da jariri nono kaɗai har wata 6 shi ne mafi kyawun abinci.`,`Exclusive breastfeeding for 6 months is the best food for a baby.`],
+[`Duk wanda ya yi maka alƙawarin ninka kuɗinka da sauri, ɗan damfara ne.`,`Anyone promising to double your money quickly is a scammer.`],
+[`Ka yi bacci na sa'o'i 7 zuwa 8; kwakwalwa tana adana abin da ka karanta lokacin bacci.`,`Sleep 7 to 8 hours; your brain stores what you studied while you sleep.`],
+[`Ka gwada karanta tambayoyin shekarun baya, domin su ne mafi kusanci da jarrabawa.`,`Practise past questions; they are the closest thing to the real exam.`],
+[`Ka duba alamar sunan banki da lambar asusu sau biyu kafin ka tura kuɗi.`,`Double-check the account name and number before transferring money.`],
+[`Motsa jiki na mintuna 30 a rana yana rage haɗarin hawan jini da ciwon sukari.`,`30 minutes of exercise a day lowers the risk of high blood pressure and diabetes.`],
+[`Ka yi adashe da mutanen da ka amince da su, kuma ku rubuta ƙa'idoji.`,`Join an adashe with people you trust, and write down the rules.`]
+];
+
+/* ================= MONEY SAFETY (scams & habits) ================= */
+const SCAMS=[
+[`Damfarar "ninka kuɗi" (Ponzi)`,`"Double your money" (Ponzi) schemes`,`Duk wanda ya yi alƙawarin riba mai yawa cikin ƙanƙanin lokaci yana damfara. Da farko suna biyan wasu, daga baya su ɓace da kuɗin.`,`Promises of huge returns in a short time are a warning sign. Early investors are paid from new victims' money until it collapses.`],
+[`Sakon karya na shigowar kuɗi`,`Fake credit alerts`,`Kada ka dogara da SMS kaɗai. Ka duba asusunka a manhajar bankinka kafin ka ba da kaya.`,`Do not trust an SMS alone. Check your account in your bank app before handing over goods.`],
+[`Neman OTP, PIN ko BVN`,`Requests for OTP, PIN or BVN`,`Ba banki ko ma'aikaci da zai tambaye ka waɗannan. Idan wani ya tambaya, ka yanke kira.`,`No bank staff will ask for these. If someone does, end the call.`],
+[`Manhajojin bashi na karya`,`Predatory loan apps`,`Wasu manhajojin bashi suna cajin riba mai tsanani kuma suna cin zarafi da sakon tuntuɓar ka. Ka yi amfani da masu lasisi kawai (duba kuɗin da zai fita a kayan aikin Bashi).`,`Some loan apps charge extreme interest and harass contacts. Use only licensed lenders (check the true cost with the Loan tool).`],
+[`Aikin karya wanda ake biya kuɗi`,`Fake jobs that demand payment`,`Aiki na gaske ba ya karɓar kuɗi kafin a ɗauke ka.`,`A real employer does not charge you to hire you.`],
+[`Kyauta ko lambar yabo ta karya`,`Fake prizes and giveaways`,`Idan ba ka shiga gasa ba, ba ka ci kyauta ba. Kada ka biya "kuɗin haraji" don karɓar kyauta.`,`If you did not enter a contest you did not win. Never pay a "fee" to claim a prize.`]
+];
+const HABITS=[
+[`Ka ware aƙalla 10% na kowane kuɗin da ka samu kafin ka kashe komai.`,`Save at least 10% of every income before spending.`],
+[`Ka rarrabe buƙata (needs) da sha'awa (wants). Buƙata ta farko.`,`Separate needs from wants. Needs first.`],
+[`Ka ajiye kuɗin gaggawa na kashe wata 3 idan za ka iya.`,`Build an emergency fund of about 3 months of expenses if you can.`],
+[`Ka guji bashi domin abin sha'awa.`,`Avoid borrowing for wants.`],
+[`Ka ajiye kuɗinka a banki ko microfinance mai lasisin CBN.`,`Keep savings in a CBN-licensed bank or microfinance bank.`]
+];
+
+/* ================= BEACON - app code ================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad=n=>(n<10?'0':'')+n;
+const iso=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const today=()=>iso(new Date());
+const parseD=s=>{const p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2])};
+const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const addMonths=(d,n)=>{const x=new Date(d);x.setMonth(x.getMonth()+n);return x};
+const fmtD=d=>d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+const naira=n=>'₦'+Number(n||0).toLocaleString('en-US',{maximumFractionDigits:2});
+const num=id=>{const el=document.getElementById(id);return el?parseFloat(el.value):NaN};
+const val=id=>{const el=document.getElementById(id);return el?el.value.trim():''};
+
+/* ---------- storage ---------- */
+const KEY='haske_v1';
+function def(){return{name:'',xp:0,streak:0,last:'',stats:{},wrong:[],best:{},badges:{},set:{lang:'both',fs:1,exam:'JAMB'},tx:[],goals:[],prices:[],kids:[],daily:''}}
+function load(){try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&typeof d==='object'){const b=def();const m=Object.assign(b,d);m.set=Object.assign(b.set,d.set||{});return m}}catch(e){}return def()}
+let S=load();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+/* ---------- language helpers ---------- */
+const U=(ha,en)=>S.set.lang==='en'?en:ha;
+const C=(ha,en)=>S.set.lang==='en'?esc(en):S.set.lang==='ha'?esc(ha):`${esc(ha)}<span class="en">${esc(en)}</span>`;
+const lvl=()=>Math.floor(S.xp/100)+1;
+
+/* ---------- random helpers ---------- */
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function rng(seed){let a=seed>>>0;return()=>{a=(a+0x6D2B79F5)|0;let t=Math.imul(a^(a>>>15),1|a);t=(t+Math.imul(t^(t>>>7),61|t))^t;return((t^(t>>>14))>>>0)/4294967296}}
+function shuffled(a,r){r=r||Math.random;a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));const t=a[i];a[i]=a[j];a[j]=t}return a}
+
+/* ---------- question bank ---------- */
+const QS=(()=>{const c={};return RAW.map(r=>{c[r[0]]=(c[r[0]]||0)+1;return{id:r[0]+c[r[0]],s:r[0],q:r[1],o:r[2],a:r[3],h:r[4],e:r[5]}})})();
+const QBY={};QS.forEach(q=>QBY[q.id]=q);
+function prep(q,r){const idx=shuffled([0,1,2,3],r);return{id:q.id,s:q.s,q:q.q,o:idx.map(i=>q.o[i]),a:idx.indexOf(q.a),h:q.h,e:q.e}}
+
+/* ---------- toast ---------- */
+let toastT;
+function toast(m){let t=$('#toast');if(!t){t=document.createElement('div');t.id='toast';t.className='toast';document.body.appendChild(t)}t.textContent=m;t.style.display='block';clearTimeout(toastT);toastT=setTimeout(()=>t.style.display='none',2800)}
+
+/* ---------- badges ---------- */
+const BADGES={
+first:[`🎯`,`Mai Farawa`,`First quiz finished`],
+ace:[`🏆`,`Ƙwararre`,`90%+ on 10+ questions`],
+s3:[`🔥`,`Mai Dagewa`,`3-day streak`],
+s7:[`🌟`,`Jarumi`,`7-day streak`],
+xp500:[`🚀`,`Mai Hawa`,`500 XP`],
+rich:[`💰`,`Mai Kuɗi`,`Logged a transaction`],
+care:[`❤️`,`Mai Kula`,`Added a child to vaccine planner`]
+};
+function award(k){if(S.badges[k])return false;S.badges[k]=today();save();toast('🏅 '+BADGES[k][1]);return true}
+
+/* ---------- streak / xp ---------- */
+function touchStreak(){
+  const t=today();if(S.last===t)return;
+  const y=iso(addDays(new Date(),-1));
+  S.streak=S.last===y?S.streak+1:1;S.last=t;
+}
+function addXP(n){S.xp+=n;if(S.xp>=500)award('xp500')}
+
+/* ---------- navigation ---------- */
+function go(to){location.hash='#'+to}
+function back(){const p=(location.hash||'#home').slice(1).split('/');if(p[0]==='quiz'){quitQuiz();return}p.pop();go(p.length?p.join('/'):'home')}
+const VIEWS={};
+
+function route(keep){
+  const raw=(location.hash||'#home').slice(1);
+  const p=raw.split('/');
+  if(run&&!run.done&&p[0]!=='quiz'){clearInterval(run.tid);run=null}
+  if(p[0]!=='quiz'&&run&&run.done)run=null;
+  const f=VIEWS[p[0]]||VIEWS.home;
+  let r;
+  try{r=f(p.slice(1))}catch(e){console.error(e);r={t:'Beacon',h:`<div class="card">Error: ${esc(e.message)}</div>`}}
+  const tab=['home','school','health','money','me'].includes(p[0])?p[0]:p[0]==='quiz'?'school':'home';
+  document.body.classList.toggle('noav',p[0]==='quiz'&&run&&!run.done);
+  const sub=p.length>1||p[0]==='quiz';
+  $('#app').innerHTML=`
+  <header>${sub?`<button onclick="back()" aria-label="back">←</button>`:''}<h1>${r.t}</h1><span class="xp">⭐ ${S.xp} · ${U('Mataki','Lv')} ${lvl()}</span></header>
+  <main>${r.h}</main>
+  <nav>${[['home','🏠',U('Gida','Home')],['school','📚',U('Makaranta','School')],['health','❤️',U('Lafiya','Health')],['money','💰',U('Kuɗi','Money')],['me','👤',U('Ni','Me')]].map(x=>`<button class="${x[0]===tab?'on':''}" onclick="go('${x[0]}')"><span>${x[1]}</span>${x[2]}</button>`).join('')}</nav>`;
+  if(r.after)r.after();
+  if(!keep)window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',()=>route());
+
+/* ---------- small ui helpers ---------- */
+const tile=(ic,t,s,to)=>`<button class="tile" onclick="go('${to}')"><span class="ti">${ic}</span><b>${t}</b><small>${s}</small></button>`;
+const foot=()=>`<div class="foot">Beacon · ATM Digital Solutions &amp; Services</div>`;
+const bar=(p,cls)=>`<div class="bar ${cls||''}"><i style="width:${Math.max(0,Math.min(100,p))}%"></i></div>`;
+function setP(obj,k,v){obj[k]=v;route(true)}
+
+/* =====================================================
+   HOME
+   ===================================================== */
+function dailyDone(){return S.daily===today()}
+function dailyCard(){
+  const d=dailyDone();
+  return `<button class="daily ${d?'done':''}" onclick="startDaily()"><b>${d?'✅ ':'🎯 '}${U('Tambayoyin yau','Daily challenge')}</b><small>${d?U('Ka gama yau. Za ka iya sake gwadawa.','Done for today. You can play again.'):U('Tambayoyi 5 don samun +20 XP','5 questions for +20 bonus XP')}</small></button>`;
+}
+VIEWS.home=()=>{
+  const tip=TIPS[Math.floor(Date.now()/864e5)%TIPS.length];
+  return{t:`Beacon`,h:`
+  <div class="hero"><div><h2>${U('Sannu','Hello')}${S.name?', '+esc(S.name):''} 👋</h2><p>${U('Ilimi · Lafiya · Arziki','Learning · Health · Wealth')}</p></div><div class="streak">🔥 ${S.streak}<small>${U('kwanaki','days')}</small></div></div>
+  ${S.name?'':`<div class="card"><div class="lbl">${U('Menene sunanka?','What is your name?')}</div><div class="row"><input id="nm" placeholder="${U('Suna','Name')}"><button class="btn sm" onclick="S.name=val('nm');save();route()">OK</button></div></div>`}
+  ${dailyCard()}
+  <div class="grid2">
+  ${tile('📚',U('Makaranta','School'),U('JAMB, WAEC, jarabawa','JAMB, WAEC, mock exams'),'school')}
+  ${tile('❤️',U('Lafiya','Health'),U('Jagora, allura, agaji','Guides, vaccines, first aid'),'health')}
+  ${tile('💰',U('Kuɗi','Money'),U('Kasafin kuɗi, adashe, zakka','Budget, adashe, zakat'),'money')}
+  ${tile('🏆',U('Ci gabana','My progress'),U('Maki, lambobin yabo','XP and badges'),'me')}
+  </div>
+  <div class="card"><h3>💡 ${U('Shawarar yau','Tip of the day')}</h3><div>${C(tip[0],tip[1])}</div></div>
+  ${foot()}`};
+};
+
+/* =====================================================
+   SCHOOL
+   ===================================================== */
+const P={sub:'all',n:10};
+const X={subs:{eng:1},n:10};
+VIEWS.school=(a)=>{
+  if(a[0]==='practice')return schoolPractice();
+  if(a[0]==='exam')return schoolExam();
+  if(a[0]==='notes')return schoolNotes(a[1]);
+  const wr=S.wrong.length;
+  return{t:U('Makaranta','School'),h:`
+  ${dailyCard()}
+  <div class="grid2">
+  ${tile('✏️',U('Atisaye','Practice'),U('Ka ga bayani nan take','Instant explanations'),'school/practice')}
+  ${tile('⏱️',U('Jarabawar gwaji','Mock exam'),U('Agogo, kamar CBT','Timed, CBT style'),'school/exam')}
+  <button class="tile" onclick="startReview()"><span class="ti">🔁</span><b>${U('Gyara kurakurai','Fix my mistakes')}</b><small>${wr} ${U('tambayoyi','questions')}</small></button>
+  ${tile('📝',U('Bayanan karatu','Study notes'),U('Taƙaitaccen bayani','Quick summaries'),'school/notes')}
+  </div>
+  <h2>${U('Ci gabanka a darasi','Your progress by subject')}</h2>
+  <div class="card">${Object.keys(SUBJ).map(k=>{const s=S.stats[k]||{c:0,t:0};const p=s.t?Math.round(s.c/s.t*100):0;return`<div class="li"><div class="g"><b>${SUBJ[k].ic} ${SUBJ[k].n}</b><small>${s.t?s.c+'/'+s.t+' ('+p+'%)':U('Ba ka fara ba','Not started')}</small>${bar(p)}</div></div>`}).join('')}</div>
+  <p class="sub">${QS.length} ${U('tambayoyi a cikin app. Ƙara ainihin tambayoyin shekarun baya don ƙarfafa shi.','questions in the app. Add real past questions to strengthen it.')}</p>
+  ${foot()}`};
+};
+const subChips=(sel,all)=>(all?`<button class="chip ${P.sub==='all'?'on':''}" onclick="setP(P,'sub','all')">${U('Duka','All')}</button>`:'')+Object.keys(SUBJ).map(k=>`<button class="chip ${sel(k)?'on':''}" onclick="${all?`setP(P,'sub','${k}')`:`togX('${k}')`}">${SUBJ[k].ic} ${SUBJ[k].n}</button>`).join('');
+function schoolPractice(){
+  return{t:U('Atisaye','Practice'),h:`<div class="card">
+  <div class="lbl">${U('Zaɓi darasi','Choose a subject')}</div><div class="chips">${subChips(k=>P.sub===k,true)}</div>
+  <div class="lbl">${U('Adadin tambayoyi','Number of questions')}</div><div class="chips">${[10,20,30].map(n=>`<button class="chip ${P.n===n?'on':''}" onclick="setP(P,'n',${n})">${n}</button>`).join('')}</div>
+  <p class="sub">${U('Za ka ga amsa da bayani bayan kowace tambaya.','You will see the answer and explanation after each question.')}</p>
+  <button class="btn" onclick="startPractice()">${U('Fara','Start')} ➜</button></div>`};
+}
+function togX(k){if(X.subs[k]){delete X.subs[k]}else X.subs[k]=1;route(true)}
+function schoolExam(){
+  const ks=Object.keys(X.subs);const tot=ks.reduce((a,k)=>a+Math.min(X.n,QS.filter(q=>q.s===k).length),0);
+  const per=S.set.exam==='JAMB'?40:60;
+  return{t:U('Jarabawar gwaji','Mock exam'),h:`<div class="card">
+  <div class="lbl">${U('Nau\'in jarabawa','Exam type')}</div><div class="chips">${['JAMB','WAEC'].map(e=>`<button class="chip ${S.set.exam===e?'on':''}" onclick="S.set.exam='${e}';save();route(true)">${e==='JAMB'?'JAMB / UTME':'WAEC / NECO'}</button>`).join('')}</div>
+  <div class="lbl">${U('Zaɓi darussa (JAMB: Turanci + 3)','Choose subjects (JAMB: English + 3)')}</div><div class="chips">${subChips(k=>X.subs[k],false)}</div>
+  <div class="lbl">${U('Tambayoyi a kowane darasi','Questions per subject')}</div><div class="chips">${[5,10,15].map(n=>`<button class="chip ${X.n===n?'on':''}" onclick="setP(X,'n',${n})">${n}</button>`).join('')}</div>
+  <p class="sub">${tot} ${U('tambayoyi','questions')} · ⏱ ${fmt(tot*per)} · ${U('Babu bayani sai an ƙare.','No explanations until you submit.')}</p>
+  <button class="btn" onclick="startExam()" ${tot?'':'disabled'}>${U('Fara jarabawa','Start exam')} ➜</button></div>`};
+}
+function schoolNotes(code){
+  if(code&&NOTES[code]){
+    return{t:SUBJ[code].ic+' '+SUBJ[code].n,h:`<div class="card">${NOTES[code].map(n=>`<div class="li"><div class="g">${C(n[0],n[1])}</div></div>`).join('')}</div>
+    <button class="btn" onclick="P.sub='${code}';startPractice()">${U('Yi atisaye a wannan darasi','Practise this subject')} ➜</button>`};
+  }
+  return{t:U('Bayanan karatu','Study notes'),h:`<div class="grid2">${Object.keys(SUBJ).map(k=>tile(SUBJ[k].ic,SUBJ[k].n,(NOTES[k]||[]).length+' '+U('bayanai','notes'),'school/notes/'+k)).join('')}</div>`};
+}
+
+/* ---------- quiz engine ---------- */
+let run=null;
+const fmt=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=t%60;return m+':'+pad(s)};
+function startQuiz(mode,list,time){
+  if(!list.length){toast(U('Babu tambayoyi.','No questions.'));return}
+  run={mode,list,i:0,ans:list.map(()=>null),done:false,time:time||0,t0:time||0,tid:null,earn:0,bonus:0};
+  if(time){run.tid=setInterval(()=>{if(!run||run.done)return;run.time--;updTimer();if(run.time<=0)finishQuiz()},1000)}
+  if(location.hash==='#quiz')route();else go('quiz');
+}
+function startPractice(){
+  const pool=QS.filter(q=>P.sub==='all'||q.s===P.sub);
+  startQuiz('practice',shuffled(pool).slice(0,Math.min(P.n,pool.length)).map(q=>prep(q)));
+}
+function startExam(){
+  let list=[];Object.keys(SUBJ).filter(k=>X.subs[k]).forEach(k=>{list=list.concat(shuffled(QS.filter(q=>q.s===k)).slice(0,X.n).map(q=>prep(q)))});
+  startQuiz('exam',list,list.length*(S.set.exam==='JAMB'?40:60));
+}
+function startDaily(){
+  const r=rng(hash(today()));
+  startQuiz('daily',shuffled(QS,r).slice(0,5).map(q=>prep(q,r)));
+}
+function startReview(){
+  const list=S.wrong.map(id=>QBY[id]).filter(Boolean);
+  if(!list.length){toast(U('Babu kuskure da aka ajiye. Yi atisaye tukuna.','No saved mistakes yet. Practise first.'));return}
+  startQuiz('review',shuffled(list).slice(0,20).map(q=>prep(q)));
+}
+function quitQuiz(){if(run&&!run.done&&!confirm(U('Ka fita? Za a rasa wannan atisayen.','Quit? This quiz will be lost.')))return;if(run)clearInterval(run.tid);run=null;go('school')}
+function updTimer(){const el=$('#tm');if(el&&run)el.textContent='⏱ '+fmt(run.time)}
+function say(){try{const x=run.list[run.i];const u=new SpeechSynthesisUtterance(x.q+'. '+x.o.map((t,i)=>'ABCD'[i]+'. '+t).join('. '));u.lang='en-NG';speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function pick(k){
+  if(!run||run.done)return;
+  if(run.mode!=='exam'&&run.ans[run.i]!==null)return;
+  run.ans[run.i]=k;route(true);
+}
+const nav=d=>{run.i=Math.max(0,Math.min(run.list.length-1,run.i+d));try{speechSynthesis.cancel()}catch(e){}route()};
+const jump=i=>{run.i=i;route()};
+function submitExam(){
+  const un=run.ans.filter(x=>x===null).length;
+  if(un&&!confirm(U(`Ba ka amsa tambayoyi ${un} ba. Ka ƙare?`,`${un} unanswered. Submit anyway?`)))return;
+  finishQuiz();
+}
+VIEWS.quiz=()=>{
+  if(!run)return{t:U('Atisaye','Quiz'),h:`<div class="card"><p>${U('Babu atisaye a yanzu.','No active quiz.')}</p><button class="btn" onclick="go('school')">${U('Koma','Back')}</button></div>`};
+  if(run.done)return resultView();
+  const q=run.list[run.i],ex=run.mode==='exam',a=run.ans[run.i],shown=!ex&&a!==null,last=run.i===run.list.length-1;
+  const title={practice:U('Atisaye','Practice'),exam:U('Jarabawa','Exam'),daily:U('Tambayoyin yau','Daily'),review:U('Gyara kurakurai','Review')}[run.mode];
+  let opts=q.o.map((t,k)=>{let c='opt';if(ex){if(a===k)c+=' sel'}else if(shown){if(k===q.a)c+=' ok';else if(k===a)c+=' no'}return`<button class="${c}" ${shown?'disabled':''} onclick="pick(${k})">${'ABCD'[k]}. ${esc(t)}</button>`}).join('');
+  let fb='';
+  if(shown){const ok=a===q.a;fb=`<div class="fb ${ok?'g':'r'}"><b>${ok?'✅ '+U('Daidai ne!','Correct!'):'❌ '+U('Ba daidai ba. Amsa: ','Wrong. Answer: ')+'ABCD'[q.a]}</b><p>${C(q.h,q.e)}</p></div>
+  <button class="btn" onclick="${last?'finishQuiz()':'nav(1)'}">${last?U('Ga sakamako','See result'):U('Na gaba','Next')} ➜</button>`}
+  let exNav='';
+  if(ex){exNav=`<div class="row" style="margin-top:12px"><button class="btn2" onclick="nav(-1)" ${run.i===0?'disabled':''}>←</button><button class="btn2" onclick="nav(1)" ${last?'disabled':''}>→</button></div>
+  <div class="pal">${run.list.map((_,i)=>`<button class="${run.ans[i]!==null?'a':''} ${i===run.i?'c':''}" onclick="jump(${i})">${i+1}</button>`).join('')}</div>
+  <button class="btn" onclick="submitExam()">${U('Ƙare jarabawa','Submit exam')}</button>`}
+  return{t:title,h:`
+  <div class="top"><span>${SUBJ[q.s].ic} ${SUBJ[q.s].n}</span>${ex?`<span id="tm" class="tm"></span>`:`<button class="del" onclick="quitQuiz()">✖ ${U('Fita','Quit')}</button>`}</div>
+  ${bar(((ex?run.ans.filter(x=>x!==null).length:run.i)/run.list.length)*100)}
+  <div class="card" style="margin-top:10px">
+  <div class="qn">${U('Tambaya','Question')} ${run.i+1} / ${run.list.length}</div>
+  <p class="q">${esc(q.q)}</p><button class="say" onclick="say()">🔊 ${U('Karanta','Read aloud')}</button>
+  ${opts}${fb}${exNav}</div>`,after:updTimer};
+};
+function finishQuiz(){
+  if(!run||run.done)return;
+  clearInterval(run.tid);run.done=true;
+  const n=run.list.length;let sc=0;const per={};
+  run.list.forEach((q,i)=>{
+    const a=run.ans[i];if(a===null&&run.mode!=='exam')return;
+    const ok=a===q.a;if(ok)sc++;
+    const st=S.stats[q.s]=S.stats[q.s]||{c:0,t:0};st.t++;if(ok)st.c++;
+    per[q.s]=per[q.s]||{c:0,t:0};per[q.s].t++;if(ok)per[q.s].c++;
+    const w=S.wrong.indexOf(q.id);
+    if(ok&&w>=0)S.wrong.splice(w,1);
+    if(!ok&&w<0)S.wrong.push(q.id);
+  });
+  run.sc=sc;run.per=per;
+  const mult=run.mode==='exam'?8:5;
+  run.earn=sc*mult;
+  if(run.mode==='daily'&&!dailyDone()&&sc>=3){run.bonus=20;S.daily=today()}
+  addXP(run.earn+run.bonus);
+  touchStreak();
+  award('first');
+  if(n>=10&&sc/n>=0.9)award('ace');
+  if(S.streak>=3)award('s3');
+  if(S.streak>=7)award('s7');
+  save();route();
+}
+function resultView(){
+  const n=run.list.length,p=Math.round(run.sc/n*100);
+  const msg=p>=70?U('Masha Allah! Kana da ƙwazo sosai. 🎉','Well done! Excellent work. 🎉'):p>=50?U('Ka yi kyau, ƙara karatu zai taimaka.','Good effort. A bit more study will help.'):U('Kada ka karaya. Ka sake gwadawa. 💪','Do not give up. Try again. 💪');
+  const perH=run.mode==='exam'?Object.keys(run.per).map(k=>`<div class="li"><div class="g">${SUBJ[k].ic} ${SUBJ[k].n}</div><b>${run.per[k].c}/${run.per[k].t}</b></div>`).join(''):'';
+  const review=run.list.map((q,i)=>{const a=run.ans[i],ok=a===q.a;return`<details><summary>${ok?'✅':a===null?'⬜':'❌'} ${i+1}. ${esc(q.q)}</summary><p>${U('Amsarka','Your answer')}: ${a===null?'-':esc(q.o[a])}<br>${U('Amsa daidai','Correct')}: <b>${esc(q.o[q.a])}</b></p><div>${C(q.h,q.e)}</div></details>`}).join('');
+  const time=run.mode==='exam'?` · ⏱ ${fmt(run.t0-run.time)}`:'';
+  return{t:U('Sakamako','Result'),h:`<div class="card center"><div class="score">${run.sc} / ${n}</div><b>${p}%</b>${time}<p>${msg}</p><p class="sub">+${run.earn+run.bonus} XP${run.bonus?' ('+U('har da kyautar yau','incl. daily bonus')+')':''}</p>
+  <button class="btn" onclick="again()">${U('Sake gwadawa','Try again')} ↻</button><button class="btn2" onclick="run=null;go('school')">${U('Koma Makaranta','Back to School')}</button></div>
+  ${perH?`<div class="card"><h3>${U('Sakamako a kowane darasi','By subject')}</h3>${perH}</div>`:''}
+  <div class="card"><h3>${U('Duba amsoshi','Review answers')}</h3>${review}</div>`};
+}
+function again(){const m=run.mode;run=null;if(m==='practice')startPractice();else if(m==='exam')startExam();else if(m==='daily')startDaily();else startReview()}
+
+/* =====================================================
+   HEALTH
+   ===================================================== */
+const KI={info:'ℹ️',do:'✅',dont:'⚠️',danger:'🚨'};
+VIEWS.health=(a)=>{
+  if(a[0]==='vax')return vaxView(a[1]);
+  if(a[0]==='edd')return eddView();
+  if(a[0]==='bmi')return bmiView();
+  if(a[0]==='ors')return orsView();
+  if(a[0]){const t=HEALTH.find(x=>x.id===a[0]);if(t)return topicView(t)}
+  return{t:U('Lafiya','Health'),h:`
+  <div class="sec danger"><h3>🚨 ${U('Gaggawa? Kira 112','Emergency? Call 112')}</h3>${U('Idan wani yana cikin haɗari, kira 112 ko ka kai shi asibiti nan take.','If someone is in danger, call 112 or get to a hospital immediately.')}</div>
+  <h2>${U('Jagorori','Guides')}</h2>
+  <div class="grid2">${HEALTH.map(t=>tile(t.ic,U(t.ha,t.en),'',`health/${t.id}`)).join('')}</div>
+  <h2>${U('Kayan aiki','Tools')}</h2>
+  <div class="grid2">
+  ${tile('💉',U('Jadawalin allura','Vaccine planner'),U('Ranakun allurar yaro','Dates for your child'),'health/vax')}
+  ${tile('📅',U('Ranar haihuwa','Due date'),U('Ƙididdige EDD','Pregnancy calculator'),'health/edd')}
+  ${tile('⚖️','BMI',U('Nauyi da tsawo','Weight and height'),'health/bmi')}
+  ${tile('🥤','ORS',U('Hada ORS a gida','Mix ORS at home'),'health/ors')}
+  </div>
+  <p class="disc">${U('Wannan bayani ne na gaba ɗaya, ba ya maye gurbin likita. Idan kana shakka, je cibiyar lafiya.','This is general information and does not replace a doctor. If in doubt, visit a health centre.')}</p>
+  ${foot()}`};
+};
+function topicView(t){
+  const links={vax:['💉',U('Jadawalin allura','Vaccine planner'),'health/vax'],edd:['📅',U('Ranar haihuwa','Due date'),'health/edd'],ors:['🥤','ORS','health/ors'],bmi:['⚖️','BMI','health/bmi']};
+  return{t:t.ic+' '+U(t.ha,t.en),h:t.secs.map(s=>`<div class="sec ${s.k}"><h3>${KI[s.k]} ${C(s.h[0],s.h[1])}</h3><ul>${s.i.map(x=>`<li>${C(x[0],x[1])}</li>`).join('')}</ul></div>`).join('')
+  +(t.tools||[]).map(k=>`<button class="btn" onclick="go('${links[k][2]}')">${links[k][0]} ${links[k][1]}</button>`).join('')
+  +`<p class="disc">${U('Wannan bayani ne na gaba ɗaya, ba ya maye gurbin likita. Idan kana shakka, je cibiyar lafiya.','General information only. It does not replace a doctor. If in doubt, visit a health centre.')}</p>`};
+}
+function vaxDates(dob){const d=parseD(dob);return VAX.map(v=>({...v,date:v.m?addMonths(d,v.m):addDays(d,(v.w||0)*7)}))}
+function vaxView(i){
+  if(i!==undefined&&S.kids[+i]){
+    const kid=S.kids[+i];const sch=vaxDates(kid.dob);const now=new Date();now.setHours(0,0,0,0);
+    const doneN=sch.filter(s=>kid.done&&kid.done[s.k]).length;
+    return{t:'💉 '+esc(kid.name),h:`<div class="card"><b>${doneN}/${sch.length}</b> ${U('an kammala','completed')}${bar(doneN/sch.length*100)}</div>
+    <div class="card">${sch.map(s=>{const dn=kid.done&&kid.done[s.k];let pill='';if(dn)pill=`<span class="pill">✔</span>`;else if(s.date<now)pill=`<span class="pill od">${U('ya wuce','overdue')}</span>`;else if(s.date-now<14*864e5)pill=`<span class="pill sn">${U('ya kusa','soon')}</span>`;
+      return`<div class="li"><input type="checkbox" style="width:22px;height:22px" ${dn?'checked':''} onchange="vaxTog(${i},'${s.k}',this.checked)"><div class="g"><b>${U(s.ha,s.en)}</b>${pill}<small>${fmtD(s.date)} · ${s.v.join(', ')}</small></div></div>`}).join('')}</div>
+    <p class="disc">${U('Wannan jadawali ne na yau da kullum. Cibiyar lafiyarka na iya ƙara ko canza allurai (misali na wata 15 ko rotavirus). Ka tambaye su.','This is the routine schedule. Your clinic may add or change vaccines (for example later doses). Always confirm with them.')}</p>
+    <button class="btn2" onclick="if(confirm('${U('Goge wannan yaro?','Delete this child?')}')){S.kids.splice(${i},1);save();go('health/vax')}">🗑 ${U('Goge','Delete')}</button>`};
+  }
+  return{t:'💉 '+U('Jadawalin allura','Vaccine planner'),h:`
+  ${S.kids.map((k,j)=>{const d=k.done?Object.keys(k.done).filter(x=>k.done[x]).length:0;return`<button class="tile" style="width:100%;margin-bottom:10px" onclick="go('health/vax/${j}')"><b>👶 ${esc(k.name)}</b><small>${U('An haifa','Born')} ${fmtD(parseD(k.dob))} · ${d}/${VAX.length}</small></button>`}).join('')}
+  <div class="card"><h3>${U('Ƙara yaro','Add a child')}</h3><div class="lbl">${U('Suna','Name')}</div><input id="kn"><div class="lbl">${U('Ranar haihuwa','Date of birth')}</div><input id="kd" type="date" max="${today()}"><button class="btn" onclick="addKid()">${U('Ƙara','Add')}</button></div>`};
+}
+function addKid(){const n=val('kn'),d=val('kd');if(!n||!d){toast(U('Cika sunan da ranar haihuwa.','Enter name and date of birth.'));return}S.kids.push({name:n,dob:d,done:{}});save();award('care');route()}
+function vaxTog(i,k,v){S.kids[i].done=S.kids[i].done||{};S.kids[i].done[k]=v;save();route(true)}
+function eddView(){
+  return{t:'📅 '+U('Ranar haihuwa (EDD)','Due date'),h:`<div class="card"><div class="lbl">${U('Ranar farko ta al\'adarka ta ƙarshe (LMP)','First day of last period (LMP)')}</div><input id="lmp" type="date" max="${today()}"><button class="btn" onclick="calcEDD()">${U('Ƙididdige','Calculate')}</button><div id="out"></div></div>
+  <p class="disc">${U('Wannan ƙiyasi ne kawai. Likita ko ungozoma za su tabbatar da ranar.','This is an estimate only. A doctor or midwife will confirm the date.')}</p>`};
+}
+function calcEDD(){
+  const v=val('lmp');if(!v){toast(U('Zaɓi kwanan wata.','Pick a date.'));return}
+  const l=parseD(v),now=new Date();now.setHours(0,0,0,0);const days=Math.floor((now-l)/864e5);
+  if(days<0||days>300){$('#out').innerHTML=`<p>${U('Kwanan wata bai dace ba.','That date does not look right.')}</p>`;return}
+  const edd=addDays(l,280),w=Math.floor(days/7),d=days%7,tri=w<13?1:w<27?2:3;
+  $('#out').innerHTML=`<div class="sec do" style="margin-top:12px"><div class="big">${fmtD(edd)}</div>${U('Ranar da ake sa ran haihuwa','Estimated due date')}<br><br>${U('Yanzu: makonni','Now: week')} <b>${w}</b> + ${d} ${U('kwanaki','days')} · ${U('Watan ciki na','Trimester')} <b>${tri}</b>${bar(Math.min(100,days/280*100))}</div><p>${U('Ka fara awon ciki (ANC) idan ba ka fara ba.','Start antenatal care (ANC) if you have not.')}</p>`;
+}
+function bmiView(){
+  return{t:'⚖️ BMI',h:`<div class="card"><div class="row"><div><div class="lbl">${U('Nauyi (kg)','Weight (kg)')}</div><input id="w" type="number" inputmode="decimal"></div><div><div class="lbl">${U('Tsawo (cm)','Height (cm)')}</div><input id="h" type="number" inputmode="decimal"></div></div><button class="btn" onclick="calcBMI()">${U('Ƙididdige','Calculate')}</button><div id="out"></div></div><p class="disc">${U('BMI ba shi da amfani ga yara da masu juna biyu.','BMI is not suitable for children or pregnant women.')}</p>`};
+}
+function calcBMI(){
+  const w=num('w'),h=num('h')/100;if(!(w>0&&h>0)){toast(U('Shigar da lambobi.','Enter numbers.'));return}
+  const b=w/(h*h);const c=b<18.5?[U('Ƙasa da kima','Underweight'),'dont']:b<25?[U('Daidai','Healthy'),'do']:b<30?[U('Ya yi yawa','Overweight'),'dont']:[U('Kiba mai yawa','Obese'),'danger'];
+  $('#out').innerHTML=`<div class="sec ${c[1]}" style="margin-top:12px"><div class="big">${b.toFixed(1)}</div>${c[0]}</div>`;
+}
+function orsView(){
+  return{t:'🥤 ORS',h:`<div class="card"><div class="lbl">${U('Lita nawa na ruwa mai tsabta (an tafasa an huce)?','Litres of clean water (boiled and cooled)?')}</div><input id="L" type="number" value="1" step="0.5" min="0.5" oninput="calcORS()"><div id="out"></div></div>
+  <div class="sec info"><h3>${U('Nawa za a sha bayan kowace bayan gida mai ruwa','How much after each loose stool')}</h3><ul><li>${U('Ƙasa da shekara 2: 50 zuwa 100 ml (kamar rabin kofi)','Under 2 years: 50 to 100 ml (about a quarter to half a cup)')}</li><li>${U('Shekara 2 zuwa 10: 100 zuwa 200 ml','2 to 10 years: 100 to 200 ml')}</li><li>${U('Manya: yadda yake so','Adults: as much as wanted')}</li></ul></div>
+  <div class="sec danger"><b>${U('Idan akwai sachet na ORS, ka bi umarnin kan sachet. Kada ka ƙara gishiri fiye da adadi. Ka je asibiti idan alamun hatsari sun bayyana.','If you have an ORS sachet, follow its instructions. Never add extra salt. Go to the clinic if danger signs appear.')}</b></div>`,after:calcORS};
+}
+function calcORS(){const L=num('L');const o=$('#out');if(!o)return;if(!(L>0)){o.innerHTML='';return}
+  o.innerHTML=`<div class="sec do" style="margin-top:12px"><b>${L} ${U('lita ruwa','litre(s) of water')}</b><ul><li>${U('Sukari','Sugar')}: <b>${6*L}</b> ${U('cokali na shayi (level)','level teaspoons')}</li><li>${U('Gishiri','Salt')}: <b>${0.5*L}</b> ${U('cokali na shayi (level)','level teaspoons')}</li></ul>${U('Ka juya sosai har sai ya narke. Ka dandana: kada ya fi hawaye gishiri. Ka yi amfani da shi cikin sa\'o\'i 24.','Stir until dissolved. It should taste no saltier than tears. Use within 24 hours.')}</div>`}
+
+/* =====================================================
+   MONEY
+   ===================================================== */
+const CAT={ex:[`Abinci`,`Sufuri`,`Makaranta`,`Data/Waya`,`Hayar gida`,`Lafiya`,`Sadaka/Zakka`,`Tufafi`,`Sauran`],in:[`Kuɗin aljihu`,`Aiki`,`Kasuwanci`,`Kyauta`,`Sauran`]};
+const M={t:'ex',m:today().slice(0,7)};
+VIEWS.money=(a)=>{
+  const f={goals:goalsView,adashe:adasheView,zakat:zakatView,loan:loanView,prices:pricesView,tips:tipsView}[a[0]];
+  if(f)return f();
+  const tx=S.tx.filter(x=>x.d.slice(0,7)===M.m).sort((a,b)=>b.d.localeCompare(a.d)||b.id-a.id);
+  const inc=tx.filter(x=>x.t==='in').reduce((s,x)=>s+x.a,0),exp=tx.filter(x=>x.t==='ex').reduce((s,x)=>s+x.a,0);
+  const cats={};tx.filter(x=>x.t==='ex').forEach(x=>cats[x.c]=(cats[x.c]||0)+x.a);
+  const ck=Object.keys(cats).sort((a,b)=>cats[b]-cats[a]);
+  const [yy,mm]=M.m.split('-').map(Number);
+  return{t:U('Kuɗi','Money'),h:`
+  <div class="card"><div class="row center"><button class="btn2 sm" style="width:auto" onclick="moveM(-1)">←</button><b style="align-self:center">${new Date(yy,mm-1,1).toLocaleDateString('en-GB',{month:'long',year:'numeric'})}</b><button class="btn2 sm" style="width:auto" onclick="moveM(1)">→</button></div>
+  <div class="row center" style="margin-top:10px"><div><small>${U('Shiga','Income')}</small><div class="pos">${naira(inc)}</div></div><div><small>${U('Fita','Spent')}</small><div class="neg">${naira(exp)}</div></div><div><small>${U('Ragowa','Balance')}</small><div class="big" style="font-size:1.1rem">${naira(inc-exp)}</div></div></div></div>
+  <div class="card"><h3>➕ ${U('Ƙara rubutu','Add entry')}</h3>
+  <div class="chips"><button class="chip ${M.t==='ex'?'on':''}" onclick="setP(M,'t','ex')">${U('Kashewa','Expense')}</button><button class="chip ${M.t==='in'?'on':''}" onclick="setP(M,'t','in')">${U('Shiga','Income')}</button></div>
+  <div class="row"><div><div class="lbl">${U('Adadi (₦)','Amount (₦)')}</div><input id="ta" type="number" inputmode="decimal"></div><div><div class="lbl">${U('Rukuni','Category')}</div><select id="tc">${CAT[M.t].map(c=>`<option>${c}</option>`).join('')}</select></div></div>
+  <div class="row"><div><div class="lbl">${U('Bayani','Note')}</div><input id="tn"></div><div><div class="lbl">${U('Rana','Date')}</div><input id="td" type="date" value="${today()}"></div></div>
+  <button class="btn" onclick="addTx()">${U('Ajiye','Save')}</button></div>
+  ${ck.length?`<div class="card"><h3>${U('Inda kuɗi suka tafi','Where money went')}</h3>${ck.map(c=>`<div style="margin:8px 0"><div class="top"><span>${c}</span><span>${naira(cats[c])}</span></div>${bar(cats[c]/exp*100,'gold')}</div>`).join('')}</div>`:''}
+  <div class="card"><h3>${U('Rubuce-rubuce','Entries')}</h3>${tx.length?tx.slice(0,40).map(x=>`<div class="li"><div class="g"><b>${esc(x.c)}</b>${x.n?' · '+esc(x.n):''}<small>${fmtD(parseD(x.d))}</small></div><span class="${x.t==='in'?'pos':'neg'}">${x.t==='in'?'+':'-'}${naira(x.a)}</span><button class="del" onclick="delTx(${x.id})">✖</button></div>`).join(''):`<p class="sub">${U('Babu rubutu a wannan watan.','No entries this month.')}</p>`}
+  ${S.tx.length?`<button class="btn2" onclick="exportCSV()">⬇ ${U('Sauke CSV','Export CSV')}</button>`:''}</div>
+  <h2>${U('Kayan aiki','Tools')}</h2>
+  <div class="grid2">
+  ${tile('🎯',U('Burin ajiya','Savings goals'),U('Ajiya zuwa buri','Save toward a goal'),'money/goals')}
+  ${tile('🤝',U('Adashe','Adashe planner'),U('Tsarin adashe','Rotating savings'),'money/adashe')}
+  ${tile('🕌',U('Zakka','Zakat'),U('Ƙididdige zakka','Zakat calculator'),'money/zakat')}
+  ${tile('🏦',U('Bashi','Loan cost'),U('Gano ainihin riba','True cost of a loan'),'money/loan')}
+  ${tile('🛒',U('Farashin kasuwa','Market prices'),U('Littafin farashi','Price notebook'),'money/prices')}
+  ${tile('🛡️',U('Kare kanka','Stay safe'),U('Damfara da shawarwari','Scams and habits'),'money/tips')}
+  </div>${foot()}`};
+};
+function moveM(d){const [y,m]=M.m.split('-').map(Number);const x=new Date(y,m-1+d,1);M.m=x.getFullYear()+'-'+pad(x.getMonth()+1);route(true)}
+function addTx(){
+  const a=num('ta');if(!(a>0)){toast(U('Shigar da adadi.','Enter an amount.'));return}
+  const d=val('td')||today();
+  S.tx.push({id:Date.now(),t:M.t,a,c:val('tc'),n:val('tn'),d});
+  M.m=d.slice(0,7);save();award('rich');route(true);toast('✅')
+}
+function delTx(id){S.tx=S.tx.filter(x=>x.id!==id);save();route(true)}
+function download(name,text,type){const b=new Blob([text],{type:type||'text/plain'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+function exportCSV(){const rows=[['date','type','category','amount','note']].concat(S.tx.slice().sort((a,b)=>a.d.localeCompare(b.d)).map(x=>[x.d,x.t==='in'?'income':'expense',x.c,x.a,x.n||'']));
+  download('beacon-money.csv',rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n'),'text/csv')}
+
+function goalsView(){
+  return{t:'🎯 '+U('Burin ajiya','Savings goals'),h:`
+  ${S.goals.map((g,i)=>{const p=g.target?g.saved/g.target*100:0;let hint='';if(g.date&&g.saved<g.target){const wk=Math.max(1,Math.ceil((parseD(g.date)-new Date())/6048e5));hint=`<small>${U('Ka ajiye','Save')} ${naira((g.target-g.saved)/wk)} ${U('a kowane mako','per week')} (${wk} ${U('makonni','weeks')})</small>`}
+    return`<div class="card"><div class="top"><b>${esc(g.name)}</b><button class="del" onclick="delGoal(${i})">✖</button></div>${naira(g.saved)} / ${naira(g.target)} (${Math.round(p)}%)${bar(p)}${hint}<div class="row" style="margin-top:8px"><input id="gd${i}" type="number" inputmode="decimal" placeholder="₦"><button class="btn sm" onclick="goalAdd(${i})">+ ${U('Ƙara','Add')}</button></div></div>`}).join('')}
+  <div class="card"><h3>${U('Sabon buri','New goal')}</h3><div class="lbl">${U('Sunan buri','Goal name')}</div><input id="gn" placeholder="${U('Misali: waya, kuɗin makaranta','e.g. phone, school fees')}"><div class="row"><div><div class="lbl">${U('Adadin da ake so (₦)','Target (₦)')}</div><input id="gt" type="number" inputmode="decimal"></div><div><div class="lbl">${U('Ranar ƙarshe (zaɓi)','Deadline (optional)')}</div><input id="gdt" type="date"></div></div><button class="btn" onclick="addGoal()">${U('Ƙara buri','Add goal')}</button></div>`};
+}
+function addGoal(){const n=val('gn'),t=num('gt');if(!n||!(t>0)){toast(U('Cika suna da adadi.','Enter a name and target.'));return}S.goals.push({name:n,target:t,saved:0,date:val('gdt')});save();route(true)}
+function goalAdd(i){const a=num('gd'+i);if(!(a>0))return;S.goals[i].saved+=a;save();route(true)}
+function delGoal(i){if(confirm(U('Goge wannan buri?','Delete this goal?'))){S.goals.splice(i,1);save();route(true)}}
+
+function adasheView(){
+  return{t:'🤝 '+U('Tsarin adashe','Adashe planner'),h:`<div class="card">
+  <div class="row"><div><div class="lbl">${U('Adadin mambobi','Members')}</div><input id="an" type="number" value="10" min="2" max="60"></div><div><div class="lbl">${U('Gudummawa (₦)','Contribution (₦)')}</div><input id="aa" type="number" value="5000"></div></div>
+  <div class="row"><div><div class="lbl">${U('Sau nawa','How often')}</div><select id="af"><option value="7">${U('Kowane mako','Weekly')}</option><option value="30">${U('Kowane wata','Monthly')}</option><option value="1">${U('Kowace rana','Daily')}</option></select></div><div><div class="lbl">${U('Rana ta farko','Start date')}</div><input id="as" type="date" value="${today()}"></div></div>
+  <div class="lbl">${U('Wane ne zagayenka (lamba)?','Which turn is yours?')}</div><input id="am" type="number" value="1" min="1">
+  <button class="btn" onclick="calcAdashe()">${U('Nuna tsari','Show plan')}</button><div id="out"></div></div>
+  <div class="sec info"><h3>${U('Shawarwari','Tips')}</h3><ul><li>${U('Ku zaɓi mai kula da kuɗi amintacce, ku rubuta ƙa\'idoji da sunayen mambobi.','Choose a trusted treasurer; write down the rules and member names.')}</li><li>${U('Ku yarda a gaba kan hukunci idan wani bai biya ba.','Agree in advance on what happens if someone misses a payment.')}</li><li>${U('Ku yi canja wuri ta banki don a samu shaida.','Pay by bank transfer so there is a record.')}</li></ul></div>`};
+}
+function calcAdashe(){
+  const n=Math.round(num('an')),a=num('aa'),f=+val('af'),s=val('as'),m=Math.round(num('am'));
+  if(!(n>=2&&a>0&&s)){toast(U('Cika duk bayanai.','Fill all fields.'));return}
+  const pot=n*a;let rows='';const st=parseD(s);
+  for(let i=1;i<=n;i++){rows+=`<tr class="${i===m?'me':''}"><td>${i}</td><td>${fmtD(addDays(st,(i-1)*f))}</td><td>${naira(pot)}</td></tr>`}
+  $('#out').innerHTML=`<div class="sec do" style="margin-top:12px">${U('Kowane zagaye kana biyan','Each round you pay')} <b>${naira(a)}</b><br>${U('Jimillar da za ka biya','Total you pay')}: <b>${naira(pot)}</b><br>${m>=1&&m<=n?`${U('Za ka karɓi','You receive')} <b>${naira(pot)}</b> ${U('a zagaye na','in round')} ${m} (${fmtD(addDays(st,(m-1)*f))})`:''}</div>
+  <table><tr><th>#</th><th>${U('Rana','Date')}</th><th>${U('Wanda zai karɓa','Payout')}</th></tr>${rows}</table>`;
+}
+function zakatView(){
+  return{t:'🕌 '+U('Ƙididdigar zakka','Zakat calculator'),h:`<div class="card">
+  ${[['z1',U('Kuɗin da ke hannu da banki','Cash and bank savings')],['z2',U('Zinariya da azurfa (ƙimar kuɗi)','Gold and silver (cash value)')],['z3',U('Kayan ciniki (ƙima)','Trade goods (value)')],['z4',U('Bashin da ake binka da za a biya (ragewa)','Debts you owe that are due (subtract)')],['z5',U('Ƙimar nisabi a yau (₦)','Current value of nisab (₦)')]].map(x=>`<div class="lbl">${x[1]}</div><input id="${x[0]}" type="number" inputmode="decimal">`).join('')}
+  <button class="btn" onclick="calcZakat()">${U('Ƙididdige','Calculate')}</button><div id="out"></div></div>
+  <p class="disc">${U('Nisabi shi ne ƙimar zinariya gram 85 (ko azurfa gram 595) a yau. Ka tambayi malami ko ka duba farashin zinariya na yau. Zakka tana wajaba idan dukiya ta kai nisabi kuma shekara ta zagayo. Wannan kayan aiki ne na taimako, ba fatawa ba.','Nisab is the value of 85g of gold (or 595g of silver) today. Ask a scholar or check today\'s gold price. Zakat is due when wealth reaches nisab and a lunar year has passed. This tool is a helper, not a fatwa.')}</p>`};
+}
+function calcZakat(){
+  const g=id=>{const v=num(id);return isNaN(v)?0:v};
+  const net=g('z1')+g('z2')+g('z3')-g('z4'),nis=g('z5');
+  if(!(nis>0)){toast(U('Shigar da ƙimar nisabi.','Enter the nisab value.'));return}
+  $('#out').innerHTML=net>=nis?`<div class="sec do" style="margin-top:12px">${U('Dukiyar da ta rage','Net wealth')}: <b>${naira(net)}</b><br>${U('Zakka (2.5%)','Zakat due (2.5%)')}: <div class="big">${naira(net*0.025)}</div></div>`:`<div class="sec info" style="margin-top:12px">${U('Dukiyarka','Your net wealth')} (${naira(net)}) ${U('ba ta kai nisabi ba, don haka zakka ba ta wajaba.','is below nisab, so zakat is not due.')}</div>`;
+}
+function loanView(){
+  return{t:'🏦 '+U('Ainihin kuɗin bashi','True cost of a loan'),h:`<div class="card">
+  <div class="row"><div><div class="lbl">${U('Bashin da aka karɓa (₦)','Amount borrowed (₦)')}</div><input id="lp" type="number" inputmode="decimal"></div><div><div class="lbl">${U('Riba a wata (%)','Interest per month (%)')}</div><input id="lr" type="number" inputmode="decimal" step="0.1"></div></div>
+  <div class="lbl">${U('Tsawon lokaci (watanni)','Duration (months)')}</div><input id="lm" type="number" inputmode="numeric">
+  <button class="btn" onclick="calcLoan()">${U('Ƙididdige','Calculate')}</button><div id="out"></div></div>
+  <p class="disc">${U('Ana ƙididdige riba ne a kan jimillar bashi (flat) kowane wata. Ainihin riba ta shekara (APR) tana nuna cikakken tsadar bashin.','Interest is calculated flat on the original amount each month. The effective APR shows the real yearly cost of the loan.')}</p>`};
+}
+function calcLoan(){
+  const P0=num('lp'),r=num('lr')/100,m=Math.round(num('lm'));
+  if(!(P0>0&&r>=0&&m>=1)){toast(U('Cika duk bayanai.','Fill all fields.'));return}
+  const intr=P0*r*m,tot=P0+intr,pm=tot/m;
+  let lo=0,hi=5;for(let i=0;i<100;i++){const mid=(lo+hi)/2;const pv=mid===0?pm*m:pm*(1-Math.pow(1+mid,-m))/mid;if(pv>P0)lo=mid;else hi=mid}
+  const apr=lo*12*100;
+  $('#out').innerHTML=`<div class="sec ${apr>60?'danger':apr>30?'dont':'do'}" style="margin-top:12px">${U('Riba','Interest')}: <b>${naira(intr)}</b><br>${U('Jimilla da za ka mayar','Total to repay')}: <b>${naira(tot)}</b><br>${U('A kowane wata','Per month')}: <b>${naira(pm)}</b><br>${U('Ainihin APR','Effective APR')}: <div class="big">${apr.toFixed(0)}%</div>${apr>60?U('Wannan bashi ne mai tsada sosai. Ka yi tunani sau biyu.','This is a very expensive loan. Think twice.'):''}</div>`;
+}
+function pricesView(){
+  const by={};S.prices.forEach(p=>{(by[p.i]=by[p.i]||[]).push(p)});
+  const items=Object.keys(by);
+  return{t:'🛒 '+U('Farashin kasuwa','Market prices'),h:`<div class="card"><h3>${U('Ƙara farashi','Add a price')}</h3>
+  <div class="row"><div><div class="lbl">${U('Kaya','Item')}</div><input id="pi" placeholder="${U('Misali: shinkafa','e.g. rice')}"></div><div><div class="lbl">${U('Farashi (₦)','Price (₦)')}</div><input id="pp" type="number" inputmode="decimal"></div></div>
+  <div class="row"><div><div class="lbl">${U('Ma\'auni','Unit')}</div><input id="pu" placeholder="${U('kwano, buhu, kg','bag, kg, congo')}"></div><div><div class="lbl">${U('Kasuwa','Market')}</div><input id="pm"></div></div>
+  <button class="btn" onclick="addPrice()">${U('Ajiye','Save')}</button></div>
+  ${items.map(k=>{const L=by[k].slice().sort((a,b)=>b.d.localeCompare(a.d)||b.id-a.id);const ch=L[1]?L[0].p-L[1].p:0;return`<div class="card"><div class="top"><b>${esc(k)}</b><span>${naira(L[0].p)}${ch?` <span class="${ch>0?'neg':'pos'}">${ch>0?'▲':'▼'}${naira(Math.abs(ch))}</span>`:''}</span></div>${L.slice(0,5).map(x=>`<div class="li"><div class="g"><small>${fmtD(parseD(x.d))} · ${esc(x.m||'-')} · ${esc(x.u||'')}</small></div><b>${naira(x.p)}</b><button class="del" onclick="delPrice(${x.id})">✖</button></div>`).join('')}</div>`}).join('')}
+  <p class="disc">${U('Ana ajiye wannan a wayarka kawai.','This is saved on your phone only.')}</p>`};
+}
+function addPrice(){const i=val('pi'),p=num('pp');if(!i||!(p>0)){toast(U('Cika kaya da farashi.','Enter item and price.'));return}S.prices.push({id:Date.now(),i,p,u:val('pu'),m:val('pm'),d:today()});save();route(true)}
+function delPrice(id){S.prices=S.prices.filter(x=>x.id!==id);save();route(true)}
+function tipsView(){
+  return{t:'🛡️ '+U('Kare kanka','Stay safe'),h:SCAMS.map(s=>`<div class="sec danger"><h3>🚨 ${C(s[0],s[1])}</h3>${C(s[2],s[3])}</div>`).join('')+`<h2>${U('Halaye masu kyau','Good money habits')}</h2><div class="card">${HABITS.map(h=>`<div class="li"><div class="g">${C(h[0],h[1])}</div></div>`).join('')}</div>
+  <div class="sec info"><h3>50 / 30 / 20</h3>${U('Ka rarraba kuɗin shiga: 50% buƙatu, 30% sha\'awa, 20% ajiya da biyan bashi.','Split income: 50% needs, 30% wants, 20% savings and debt repayment.')}</div>`};
+}
+
+/* =====================================================
+   ME
+   ===================================================== */
+VIEWS.me=()=>{
+  const tot=Object.values(S.stats).reduce((a,s)=>({c:a.c+s.c,t:a.t+s.t}),{c:0,t:0});
+  return{t:U('Ni','Me'),h:`
+  <div class="card center"><div class="big">${S.name?esc(S.name):'👤'}</div>⭐ ${S.xp} XP · ${U('Mataki','Level')} ${lvl()} · 🔥 ${S.streak} ${U('kwanaki','days')}${bar(S.xp%100)}<small>${100-S.xp%100} XP ${U('zuwa mataki na gaba','to next level')}</small>
+  <p class="sub">${U('Daidai','Correct')}: ${tot.c}/${tot.t}${tot.t?' ('+Math.round(tot.c/tot.t*100)+'%)':''}</p></div>
+  <h2>🏅 ${U('Lambobin yabo','Badges')}</h2><div class="badges">${Object.keys(BADGES).map(k=>`<div class="bdg ${S.badges[k]?'':'off'}"><span>${BADGES[k][0]}</span><b>${BADGES[k][1]}</b><br><small>${BADGES[k][2]}</small></div>`).join('')}</div>
+  <h2>⚙️ ${U('Saituna','Settings')}</h2><div class="card">
+  <div class="lbl">${U('Suna','Name')}</div><div class="row"><input id="nm" value="${esc(S.name)}"><button class="btn sm" onclick="S.name=val('nm');save();toast('✅');route(true)">OK</button></div>
+  <div class="lbl">${U('Harshe','Language')}</div><div class="chips">${[['both','Hausa + English'],['ha','Hausa'],['en','English']].map(x=>`<button class="chip ${S.set.lang===x[0]?'on':''}" onclick="S.set.lang='${x[0]}';save();route(true)">${x[1]}</button>`).join('')}</div>
+  <div class="lbl">${U('Girman rubutu','Text size')}</div><div class="chips">${[[0.9,'A-'],[1,'A'],[1.15,'A+'],[1.3,'A++']].map(x=>`<button class="chip ${S.set.fs===x[0]?'on':''}" onclick="S.set.fs=${x[0]};save();applyFS();route(true)">${x[1]}</button>`).join('')}</div></div>
+  <h2>💾 ${U('Ajiya da raba','Backup and share')}</h2><div class="card">
+  <p class="sub">${U('Duk bayananka suna cikin wayarka. Ka yi ajiya don kada ka rasa su.','All your data lives on this phone. Make a backup so you do not lose it.')}</p>
+  <button class="btn2" onclick="download('beacon-backup.json',JSON.stringify(S),'application/json')">⬇ ${U('Sauke ajiya (JSON)','Download backup (JSON)')}</button>
+  <div class="lbl">${U('Dawo da ajiya','Restore a backup')}</div><input type="file" accept=".json,application/json" onchange="restore(this)">
+  <button class="btn2" onclick="shareApp()">📤 ${U('Raba app ɗin','Share this app')}</button>
+  <button class="btn2" style="color:var(--no);border-color:var(--no)" onclick="resetAll()">🗑 ${U('Goge duk bayanai','Erase all data')}</button></div>
+  <div class="card"><h3>📲 ${U('Shigar da shi a waya','Install on your phone')}</h3><p class="sub">${U('A Chrome: danna ⋮ sannan "Add to Home screen". Zai yi aiki ba tare da data ba.','In Chrome: tap ⋮ then "Add to Home screen". It will work without data.')}</p></div>
+  ${foot()}`};
+};
+function applyFS(){document.documentElement.style.fontSize=(16*S.set.fs)+'px'}
+function restore(inp){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(typeof d!=='object'||d===null)throw 0;const b=def();S=Object.assign(b,d);S.set=Object.assign(b.set,d.set||{});save();applyFS();toast('✅');route()}catch(e){toast(U('Fayil ɗin bai dace ba.','Invalid backup file.'))}};r.readAsText(f)}
+function shareApp(){const t=U('Beacon: app na ilimi, lafiya da kuɗi.','Beacon: a learning, health and money app.');if(navigator.share)navigator.share({title:'Beacon',text:t,url:location.href.split('#')[0]}).catch(()=>{});else toast(U('Ka kwafi adireshin shafin ka tura.','Copy the page address and send it.'))}
+function resetAll(){if(confirm(U('Ka tabbata? Za a goge komai.','Are you sure? Everything will be erased.'))&&confirm(U('Sau ɗaya kuma: goge duk bayanai?','Last check: erase all data?'))){S=def();save();applyFS();go('home');route()}}
+
+/* ---------- boot ---------- */
+applyFS();
+if('serviceWorker' in navigator&&/^https?:/.test(location.protocol)){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+route();
+
+</script>
+</body>
+</html>
